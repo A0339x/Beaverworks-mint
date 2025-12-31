@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Play, ExternalLink, PlayCircle, FileText } from 'lucide-react';
+import { Play, ExternalLink, PlayCircle, FileText, X } from 'lucide-react';
 import { PAGE_CONTENT } from '../constants';
 import { CallToAction } from './CallToAction';
 
@@ -12,26 +12,53 @@ interface StoryPageProps {
 export const StoryPage: React.FC<StoryPageProps> = ({ pageId = 'story', onNavigate }) => {
   const content = PAGE_CONTENT[pageId] || PAGE_CONTENT['story'];
   const [selectedTrack, setSelectedTrack] = useState<number | null>(null);
+  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+
+  // Check if first section is videoHero - if so, skip default header
+  const hasVideoHero = content.sections[0]?.type === 'videoHero';
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <div className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={content.headerImage} className="w-full h-full object-cover grayscale brightness-50" alt={content.title} />
-          <div className="absolute inset-0 bg-slate-900/40" />
+      {/* Lightbox for gallery images */}
+      {lightboxImage && (
+        <div
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+          onClick={() => setLightboxImage(null)}
+        >
+          <button
+            className="absolute top-6 right-6 text-white hover:text-canadian-red transition-colors"
+            onClick={() => setLightboxImage(null)}
+          >
+            <X className="w-8 h-8" />
+          </button>
+          <img
+            src={lightboxImage}
+            alt="Gallery"
+            className="max-w-full max-h-[90vh] object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
         </div>
-        <div className="relative z-10 text-center text-white p-6">
-           <motion.div
-             initial={{ opacity: 0, y: 30 }}
-             animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 0.8 }}
-           >
-             <span className="block text-canadian-red text-xs font-bold tracking-[0.3em] uppercase mb-4">{content.subtitle}</span>
-             <h1 className="font-serif text-5xl md:text-7xl">{content.title}</h1>
-           </motion.div>
+      )}
+
+      {/* Default Header - only show if no videoHero */}
+      {!hasVideoHero && (
+        <div className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0">
+            <img src={content.headerImage} className="w-full h-full object-cover grayscale brightness-50" alt={content.title} />
+            <div className="absolute inset-0 bg-slate-900/40" />
+          </div>
+          <div className="relative z-10 text-center text-white p-6">
+             <motion.div
+               initial={{ opacity: 0, y: 30 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.8 }}
+             >
+               <span className="block text-canadian-red text-xs font-bold tracking-[0.3em] uppercase mb-4">{content.subtitle}</span>
+               <h1 className="font-serif text-5xl md:text-7xl">{content.title}</h1>
+             </motion.div>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Content Sections */}
       <div className="py-24">
@@ -231,6 +258,150 @@ export const StoryPage: React.FC<StoryPageProps> = ({ pageId = 'story', onNaviga
                       </div>
                     </motion.a>
                   ))}
+                </div>
+              </div>
+            );
+          }
+
+          // Video Hero Type: Full screen video background with text overlay
+          if (section.type === 'videoHero') {
+            return (
+              <div key={idx} className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden -mt-24">
+                <div className="absolute inset-0">
+                  {section.videoUrl ? (
+                    <video
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="w-full h-full object-cover"
+                    >
+                      <source src={section.videoUrl} type="video/mp4" />
+                    </video>
+                  ) : section.image ? (
+                    <img src={section.image} className="w-full h-full object-cover" alt="" />
+                  ) : null}
+                  <div className="absolute inset-0 bg-slate-900/50" />
+                </div>
+                <div className="relative z-10 text-center text-white p-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                  >
+                    {section.subtitle && (
+                      <span className="block text-canadian-red text-xs font-bold tracking-[0.3em] uppercase mb-4">
+                        {section.subtitle}
+                      </span>
+                    )}
+                    {section.title && (
+                      <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl mb-6">{section.title}</h1>
+                    )}
+                    {section.content && (
+                      <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto font-light">
+                        {section.content}
+                      </p>
+                    )}
+                  </motion.div>
+                </div>
+              </div>
+            );
+          }
+
+          // Gallery Type: Grid of images with lightbox
+          if (section.type === 'gallery') {
+            return (
+              <div key={idx} className="container mx-auto px-6 mb-32">
+                {section.title && (
+                  <div className="text-center mb-12">
+                    <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-4">{section.title}</h2>
+                    {section.subtitle && (
+                      <p className="text-slate-500 text-lg">{section.subtitle}</p>
+                    )}
+                  </div>
+                )}
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+                  {section.images?.map((img, imgIdx) => (
+                    <motion.div
+                      key={imgIdx}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: imgIdx * 0.05 }}
+                      className="aspect-square overflow-hidden cursor-pointer group"
+                      onClick={() => setLightboxImage(img)}
+                    >
+                      <img
+                        src={img}
+                        alt={`Gallery ${imgIdx + 1}`}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            );
+          }
+
+          // Movie Section Type: Centered title with subtitle for film references
+          if (section.type === 'movieSection') {
+            return (
+              <div key={idx} className="py-24 bg-slate-900 text-white mb-24">
+                <div className="container mx-auto px-6 text-center">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    {section.title && (
+                      <h2 className="text-4xl md:text-6xl font-serif mb-6">{section.title}</h2>
+                    )}
+                    {section.subtitle && (
+                      <p className="text-xl md:text-2xl text-canadian-red font-medium uppercase tracking-wider">
+                        {section.subtitle}
+                      </p>
+                    )}
+                    {section.content && (
+                      <p className="text-lg text-gray-300 max-w-3xl mx-auto mt-8 leading-relaxed">
+                        {section.content}
+                      </p>
+                    )}
+                    {section.image && (
+                      <div className="mt-12 max-w-4xl mx-auto">
+                        <img src={section.image} alt={section.title} className="w-full rounded-sm shadow-2xl" />
+                      </div>
+                    )}
+                  </motion.div>
+                </div>
+              </div>
+            );
+          }
+
+          // Product Info Type: Specs and details for product pages
+          if (section.type === 'productInfo') {
+            return (
+              <div key={idx} className="container mx-auto px-6 mb-32">
+                <div className="max-w-4xl mx-auto bg-slate-50 p-8 md:p-12 rounded-sm">
+                  {section.title && (
+                    <h2 className="text-3xl font-serif text-slate-900 mb-6">{section.title}</h2>
+                  )}
+                  {section.price && (
+                    <p className="text-3xl font-bold text-canadian-red mb-8">{section.price}</p>
+                  )}
+                  {section.specs && section.specs.length > 0 && (
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8">
+                      {section.specs.map((spec, specIdx) => (
+                        <div key={specIdx} className="border-l-2 border-canadian-red pl-4">
+                          <p className="text-xs text-slate-500 uppercase tracking-wider mb-1">{spec.label}</p>
+                          <p className="text-lg font-medium text-slate-900">{spec.value}</p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {section.content && (
+                    <p className="text-slate-600 leading-relaxed whitespace-pre-line">{section.content}</p>
+                  )}
                 </div>
               </div>
             );

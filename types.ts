@@ -60,11 +60,11 @@ export interface PageContent {
   subtitle?: string;
   headerImage: string;
   sections: {
-    type?: 'standard' | 'banner' | 'embed' | 'musicPlayer' | 'pressGallery'; // New field to distinguish layout styles
+    type?: 'standard' | 'banner' | 'embed' | 'musicPlayer' | 'pressGallery' | 'videoHero' | 'gallery' | 'productInfo' | 'movieSection';
     title?: string;
-    subtitle?: string; // Added subtitle support for sections
+    subtitle?: string;
     content?: string;
-    quote?: string; // Added for banner quotes
+    quote?: string; // For banner quotes
     image?: string;
     imageAlign?: 'left' | 'right';
     embedUrl?: string; // For embedded content like Bandcamp players
@@ -72,5 +72,11 @@ export interface PageContent {
     bandcampAlbumId?: string; // For music player
     tracks?: { title: string; trackId: number }[]; // For music player
     items?: { title: string; source: string; date: string; description: string; image: string; link: string; type: string }[]; // For press gallery
+    videoUrl?: string; // For video hero background
+    images?: string[]; // For gallery section
+    price?: string; // For product info
+    specs?: { label: string; value: string }[]; // For product info
+    buttonText?: string; // For CTA buttons
+    buttonLink?: string; // For CTA buttons
   }[];
 }
