@@ -136,7 +136,9 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({ categoryId, onNa
         {collectionInfo && (
            <div className="text-center mb-16 mt-12">
               <span className="text-xs font-bold tracking-[0.2em] uppercase text-slate-400 mb-3 block">The Collection</span>
-              <h3 className="text-3xl font-serif text-slate-900">Available Coins</h3>
+              <h3 className="text-3xl font-serif text-slate-900">
+                {categoryId === 'watches' ? 'Available Watches' : categoryId === 'badges' ? 'Available Badges' : 'Available Coins'}
+              </h3>
            </div>
         )}
 
