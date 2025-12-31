@@ -1,7 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ViewType } from '../types';
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  onNavigate: (id: string, type: ViewType) => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
   return (
     <div className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -36,18 +41,18 @@ export const Hero: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a 
-              href="#shop" 
+            <button
+              onClick={() => onNavigate('100-collection', 'category')}
               className="px-10 py-4 bg-canadian-red text-white text-sm uppercase tracking-widest hover:bg-canadian-dark transition-all transform hover:-translate-y-1 shadow-lg shadow-red-900/20 min-w-[200px]"
             >
               View Collection
-            </a>
-            <a 
-              href="#story" 
+            </button>
+            <button
+              onClick={() => onNavigate('story', 'page')}
               className="px-10 py-4 border border-white text-white text-sm uppercase tracking-widest hover:bg-white hover:text-slate-900 transition-all min-w-[200px]"
             >
               Our Story
-            </a>
+            </button>
           </div>
         </motion.div>
       </div>

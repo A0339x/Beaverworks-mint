@@ -29,7 +29,7 @@ function App() {
       case 'home':
         return (
           <>
-            <Hero />
+            <Hero onNavigate={handleNavigate} />
             <Features />
             <ProductGrid onNavigate={handleNavigate} />
             {/* Banner Section */}
