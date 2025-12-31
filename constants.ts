@@ -2,9 +2,20 @@ import { Hammer, PenTool, Flame, Stamp, Award, Clock, MapPin, Shield, Star, User
 import { NavItem, Feature, NewsItem, ProductHighlight, PageContent, CollectionInfo } from './types';
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: 'Shop', id: 'shop', type: 'category' },
-  { 
-    label: 'Avro Arrow', 
+  {
+    label: 'Shop',
+    id: 'shop',
+    type: 'category',
+    children: [
+      { label: 'All Products', id: 'shop', type: 'category' },
+      { label: 'Avro Arrow Collection', id: 'arrow-collection', type: 'category' },
+      { label: 'The 100 Collection', id: '100-collection', type: 'category' },
+      { label: 'Flight Badges', id: 'badges', type: 'category' },
+      { label: 'Watches', id: 'watches', type: 'category' },
+    ]
+  },
+  {
+    label: 'Avro Arrow',
     id: 'arrow-collection',
     type: 'category',
     children: [
@@ -12,11 +23,10 @@ export const NAV_ITEMS: NavItem[] = [
       { label: 'The Silver Arrow', id: 'silver-arrow', type: 'product' },
       { label: 'Program Metal', id: 'arrow-program', type: 'product' },
       { label: 'Test Pilot Edition', id: 'test-pilot', type: 'product' },
-      { label: 'Flight Badge', id: 'arrow-badge', type: 'product' },
     ]
   },
-  { 
-    label: 'The 100 Collection', 
+  {
+    label: 'The 100 Collection',
     id: '100-collection',
     type: 'category',
     children: [
@@ -32,7 +42,7 @@ export const NAV_ITEMS: NavItem[] = [
   {
     label: 'Services',
     id: 'services',
-    type: 'page', // Parent type, specific children handle routing
+    type: 'page',
     children: [
       { label: 'Leadership', id: 'leadership', type: 'page' },
       { label: 'Consulting', id: 'consulting', type: 'page' },
@@ -40,12 +50,17 @@ export const NAV_ITEMS: NavItem[] = [
       { label: 'Striking', id: 'striking', type: 'page' },
     ]
   },
-  { label: 'Flight Badges', id: 'badges', type: 'category' },
-  { label: 'Watches', id: 'watches', type: 'category' },
   { label: 'Bullion', id: 'bullion', type: 'page' },
-  { label: 'Music', id: 'music', type: 'page' },
-  { label: 'Press', id: 'press', type: 'page' },
-  { label: 'Our Story', id: 'story', type: 'page' },
+  {
+    label: 'About',
+    id: 'story',
+    type: 'page',
+    children: [
+      { label: 'Our Story', id: 'story', type: 'page' },
+      { label: 'Press & Media', id: 'press', type: 'page' },
+      { label: 'Music', id: 'music', type: 'page' },
+    ]
+  },
   { label: 'Contact', id: 'contact', type: 'page' },
 ];
 

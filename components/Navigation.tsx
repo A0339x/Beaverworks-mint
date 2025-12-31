@@ -61,26 +61,26 @@ export const Navigation: React.FC<NavigationProps> = ({ onNavigate, currentView 
         </button>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex items-center gap-8 pl-12">
+        <div className="hidden lg:flex items-center gap-1 xl:gap-2 pl-4 xl:pl-8">
           {NAV_ITEMS.map((item) => (
             <div key={item.label} className="relative group">
               <button
                 onClick={() => handleNavClick(item)}
-                className={`text-sm uppercase tracking-widest font-medium transition-colors hover:text-canadian-red flex items-center gap-1 ${textColorClass}`}
+                className={`text-xs xl:text-sm uppercase tracking-wider xl:tracking-widest font-medium transition-colors hover:text-canadian-red flex items-center gap-1 px-2 xl:px-3 py-2 ${textColorClass}`}
               >
                 {item.label}
-                {item.children && <ChevronDown className="w-3 h-3" />}
+                {item.children && <ChevronDown className="w-3 h-3 opacity-60" />}
               </button>
-              
+
               {/* Dropdown */}
               {item.children && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-8 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
-                  <div className="bg-white shadow-xl p-4 min-w-[200px] border-t-2 border-canadian-red">
-                    {item.children.map((child) => (
+                <div className="absolute top-full left-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50">
+                  <div className="bg-white shadow-2xl rounded-sm min-w-[220px] border-t-2 border-canadian-red overflow-hidden">
+                    {item.children.map((child, idx) => (
                       <button
                         key={child.label}
                         onClick={(e) => handleChildClick(e, child)}
-                        className="block w-full text-left py-2 text-slate-600 hover:text-canadian-red hover:bg-red-50 px-2 text-sm transition-colors uppercase tracking-wider whitespace-nowrap"
+                        className={`block w-full text-left py-3 px-4 text-slate-600 hover:text-canadian-red hover:bg-red-50 text-sm transition-colors tracking-wide whitespace-nowrap ${idx !== item.children!.length - 1 ? 'border-b border-gray-100' : ''}`}
                       >
                         {child.label}
                       </button>
