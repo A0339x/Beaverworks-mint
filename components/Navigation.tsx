@@ -118,52 +118,93 @@ export const Navigation: React.FC<NavigationProps> = ({ onNavigate, currentView 
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: '100vh' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white fixed top-0 left-0 w-full overflow-y-auto pb-20 pt-32 z-40"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="lg:hidden fixed inset-0 bg-slate-900 z-40 overflow-hidden"
           >
-            <div className="p-6 flex flex-col gap-4">
-              {NAV_ITEMS.map((item) => (
-                <div key={item.label}>
+            {/* Header area with logo and close button */}
+            <div className="flex justify-between items-center px-6 py-4 border-b border-slate-800">
+              <img
+                src="/logo-1.png"
+                alt="Beaverworks Mint"
+                className="h-10 w-auto invert"
+              />
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-white p-2"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            {/* Scrollable menu content */}
+            <div className="overflow-y-auto h-[calc(100vh-180px)] px-6 py-6">
+              {NAV_ITEMS.map((item, index) => (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.05 }}
+                >
                   <button
                     onClick={() => handleNavClick(item)}
-                    className="flex justify-between items-center w-full text-left text-lg font-serif text-slate-800 py-3 border-b border-gray-100"
+                    className="flex justify-between items-center w-full text-left py-4 border-b border-slate-800"
                   >
-                    {item.label}
+                    <span className="text-white text-lg font-medium tracking-wide">
+                      {item.label}
+                    </span>
                     {item.children && (
-                      <ChevronDown className={`w-4 h-4 transition-transform ${activeSubmenu === item.label ? 'rotate-180' : ''}`} />
+                      <ChevronDown
+                        className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${
+                          activeSubmenu === item.label ? 'rotate-180 text-canadian-red' : ''
+                        }`}
+                      />
                     )}
                   </button>
-                  
+
                   <AnimatePresence>
                     {item.children && activeSubmenu === item.label && (
                       <motion.div
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        className="bg-gray-50 overflow-hidden"
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden bg-slate-800/50 -mx-6 px-6"
                       >
-                        {item.children.map((child) => (
-                          <button 
-                            key={child.label} 
-                            onClick={(e) => handleChildClick(e, child)} 
-                            className="block w-full text-left py-3 px-6 text-sm text-slate-600 hover:text-canadian-red"
+                        {item.children.map((child, childIndex) => (
+                          <motion.button
+                            key={child.label}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: childIndex * 0.03 }}
+                            onClick={(e) => handleChildClick(e, child)}
+                            className="block w-full text-left py-3 pl-4 text-slate-300 hover:text-canadian-red transition-colors border-b border-slate-700/50 last:border-b-0"
                           >
-                            {child.label}
-                          </button>
+                            <span className="flex items-center gap-2">
+                              <span className="w-1.5 h-1.5 bg-canadian-red rounded-full"></span>
+                              {child.label}
+                            </span>
+                          </motion.button>
                         ))}
                       </motion.div>
                     )}
                   </AnimatePresence>
-                </div>
+                </motion.div>
               ))}
-              <div className="flex gap-4 mt-6 justify-center">
-                <button className="flex items-center gap-2 px-6 py-3 bg-slate-900 text-white w-full justify-center">
-                  <User className="w-4 h-4" /> Account
+            </div>
+
+            {/* Fixed bottom action buttons */}
+            <div className="absolute bottom-0 left-0 right-0 p-6 bg-slate-900 border-t border-slate-800">
+              <div className="flex gap-3">
+                <button className="flex items-center justify-center gap-2 flex-1 py-4 bg-slate-800 text-white font-medium rounded-sm hover:bg-slate-700 transition-colors">
+                  <User className="w-5 h-5" />
+                  Account
                 </button>
-                <button className="flex items-center gap-2 px-6 py-3 bg-canadian-red text-white w-full justify-center">
-                  <ShoppingBag className="w-4 h-4" /> Cart
+                <button className="flex items-center justify-center gap-2 flex-1 py-4 bg-canadian-red text-white font-medium rounded-sm hover:bg-red-700 transition-colors">
+                  <ShoppingBag className="w-5 h-5" />
+                  Cart
                 </button>
               </div>
             </div>
