@@ -8,7 +8,7 @@ export const NAV_ITEMS: NavItem[] = [
     type: 'category',
     children: [
       { label: 'All Products', id: 'shop', type: 'category' },
-      { label: 'Avro Arrow Collection', id: 'arrow-collection', type: 'category' },
+      { label: 'Avro Arrow Collection', id: 'arrow-main', type: 'page' },
       { label: 'The 100 Collection', id: '100-collection', type: 'category' },
       { label: 'Flight Badges', id: 'badges', type: 'category' },
       { label: 'Watches', id: 'watches', type: 'category' },
@@ -16,13 +16,13 @@ export const NAV_ITEMS: NavItem[] = [
   },
   {
     label: 'Avro Arrow',
-    id: 'arrow-collection',
-    type: 'category',
+    id: 'arrow-main',
+    type: 'page',
     children: [
-      { label: 'The Golden Arrow', id: 'golden-arrow', type: 'product' },
-      { label: 'The Silver Arrow', id: 'silver-arrow', type: 'product' },
-      { label: 'Program Metal', id: 'arrow-program', type: 'product' },
-      { label: 'Test Pilot Edition', id: 'test-pilot', type: 'product' },
+      { label: 'Golden Arrow', id: 'golden-arrow', type: 'product' },
+      { label: 'Arrow Coin', id: 'silver-arrow', type: 'product' },
+      { label: 'Arrow Metal Coins', id: 'arrow-program', type: 'product' },
+      { label: 'Arrow Test Pilots', id: 'test-pilot', type: 'product' },
     ]
   },
   {
@@ -830,7 +830,7 @@ export const ALL_PRODUCTS: ProductHighlight[] = [
   // --- Avro Arrow Collection ---
   {
     id: 'golden-arrow',
-    title: 'The Golden Arrow',
+    title: 'Golden Arrow',
     subtitle: 'The Coin They Tried to Kill',
     price: '$12,500.00',
     category: 'arrow-collection gold',
@@ -853,7 +853,7 @@ They tried to destroy our dream. They utterly, utterly failed.`,
   },
   {
     id: 'silver-arrow',
-    title: 'The Silver Arrow',
+    title: 'Arrow Coin',
     subtitle: 'The Coin That Started It All',
     price: '$145.00',
     category: 'arrow-collection silver',
@@ -876,7 +876,7 @@ Series A Complete: 425 total. Series J: Mintage 426-1535. Maximum Total Public M
   },
   {
     id: 'arrow-program',
-    title: 'Arrow Program Metal Coin',
+    title: 'Arrow Metal Coins',
     subtitle: 'A Tangible Connection to History',
     price: '$795.00',
     category: 'arrow-collection',
@@ -898,7 +898,7 @@ We are never going to allow them to wipe her from history.`,
   },
   {
     id: 'test-pilot',
-    title: 'Test Pilot Edition',
+    title: 'Arrow Test Pilots',
     subtitle: 'A Tribute to Courage and Flight',
     price: '$206.00',
     category: 'arrow-collection silver',
