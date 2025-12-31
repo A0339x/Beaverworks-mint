@@ -608,13 +608,13 @@ This is Beaverworks Mint. Built from nothing. Forged with purpose. Minted for Ca
         type: 'pressGallery',
         items: [
           {
-            title: "Valuable Coins Returned",
-            source: "CBC News",
-            date: "June 13, 2016",
-            description: "Edmonton-based coin designer reunited with valuable coin collection left behind in a St. John's taxi.",
+            title: "Arrow Coins Minted",
+            source: "Canadian Aviator",
+            date: "March/April 2016",
+            description: "First of 100 coins marking aviation milestones. Edmonton designer Joe Green immortalizes the Avro Arrow.",
             image: "https://beaverworksmint.ca/wp-content/uploads/2025/07/CBC1-scaled.jpg",
-            link: "https://www.cbc.ca/player/play/video/1.3633160",
-            type: "video"
+            link: "https://canadianaviator.com/coins-commemorate-arrow/",
+            type: "article"
           },
           {
             title: "Space Flag Interview",
