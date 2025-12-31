@@ -615,10 +615,21 @@ We believe music and minting share the same heartbeat: precision, discipline, an
         imageAlign: 'left'
       },
       {
-        type: 'embed',
+        type: 'musicPlayer',
         title: "Listen to Per Ardua Ad Astra",
-        subtitle: "Click any track below to play",
-        embedUrl: "https://bandcamp.com/EmbeddedPlayer/album=2313670382/size=large/bgcol=ffffff/linkcol=c8102e/tracklist=true/transparent=true/"
+        subtitle: "by Johnson & The Beavers",
+        albumArt: "https://beaverworksmint.ca/wp-content/uploads/2025/07/Album.jpg",
+        bandcampAlbumId: "2313670382",
+        tracks: [
+          { title: "Last of the Canadian Pride Machine", duration: "4:04" },
+          { title: "Minted Nights", duration: "2:29" },
+          { title: "Golden Arrow", duration: "3:15" },
+          { title: "Per Ardua Ad Astra", duration: "3:42" },
+          { title: "Silver Wings", duration: "2:58" },
+          { title: "The Mint", duration: "3:33" },
+          { title: "Beaverworks", duration: "4:12" },
+          { title: "RCAF Legacy", duration: "3:47" }
+        ]
       }
     ]
   },

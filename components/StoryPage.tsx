@@ -92,6 +92,67 @@ export const StoryPage: React.FC<StoryPageProps> = ({ pageId = 'story', onNaviga
             );
           }
 
+          // Music Player Type: Side-by-side album art and track list
+          if (section.type === 'musicPlayer') {
+            return (
+              <div key={idx} className="container mx-auto px-6 mb-32">
+                <div className="max-w-5xl mx-auto">
+                  {section.title && (
+                    <h2 className="text-3xl font-serif text-slate-900 mb-2 text-center">{section.title}</h2>
+                  )}
+                  {section.subtitle && (
+                    <p className="text-slate-500 text-center mb-10">{section.subtitle}</p>
+                  )}
+                  <div className="flex flex-col md:flex-row gap-8 bg-white shadow-xl rounded-sm overflow-hidden">
+                    {/* Album Art with embedded mini player */}
+                    <div className="md:w-1/2">
+                      <div className="aspect-square relative">
+                        <img
+                          src={section.albumArt}
+                          alt={section.title || 'Album'}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      {/* Mini Bandcamp player for actual playback */}
+                      <iframe
+                        src={`https://bandcamp.com/EmbeddedPlayer/album=${section.bandcampAlbumId}/size=small/bgcol=ffffff/linkcol=c8102e/transparent=true/`}
+                        style={{ border: 0, width: '100%', height: '42px' }}
+                        seamless
+                        title="Music player"
+                      />
+                    </div>
+                    {/* Track List */}
+                    <div className="md:w-1/2 p-6 md:p-8">
+                      <h3 className="text-xs font-bold tracking-[0.2em] uppercase text-slate-400 mb-6">Track List</h3>
+                      <ul className="space-y-1">
+                        {section.tracks?.map((track, trackIdx) => (
+                          <li
+                            key={trackIdx}
+                            className="flex justify-between items-center py-3 border-b border-gray-100 hover:bg-gray-50 transition-colors cursor-pointer group"
+                          >
+                            <div className="flex items-center gap-4">
+                              <span className="text-slate-400 text-sm w-6">{trackIdx + 1}</span>
+                              <span className="text-slate-900 group-hover:text-canadian-red transition-colors">{track.title}</span>
+                            </div>
+                            <span className="text-slate-400 text-sm">{track.duration}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <a
+                        href="https://johnsonthebeavers.bandcamp.com/album/per-ardua-ad-astra"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block mt-8 text-xs font-bold tracking-[0.2em] uppercase text-canadian-red hover:text-canadian-dark transition-colors"
+                      >
+                        Listen on Bandcamp →
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
           // Standard Type: Text and Image split
           return (
             <div key={idx} className="container mx-auto px-6 mb-32">
