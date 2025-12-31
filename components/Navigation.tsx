@@ -122,10 +122,10 @@ export const Navigation: React.FC<NavigationProps> = ({ onNavigate, currentView 
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden fixed inset-0 bg-slate-900 z-40 overflow-hidden"
+            className="lg:hidden fixed inset-0 bg-slate-900 z-40 flex flex-col"
           >
             {/* Header area with logo and close button */}
-            <div className="flex justify-between items-center px-6 py-4 border-b border-slate-800">
+            <div className="flex-shrink-0 flex justify-between items-center px-6 py-4 border-b border-slate-800">
               <img
                 src="/logo-1.png"
                 alt="Beaverworks Mint"
@@ -139,15 +139,10 @@ export const Navigation: React.FC<NavigationProps> = ({ onNavigate, currentView 
               </button>
             </div>
 
-            {/* Scrollable menu content */}
-            <div className="overflow-y-auto h-[calc(100vh-180px)] px-6 py-6">
+            {/* Scrollable menu content - flex-1 takes remaining space */}
+            <div className="flex-1 overflow-y-auto px-6 py-4">
               {NAV_ITEMS.map((item, index) => (
-                <motion.div
-                  key={item.label}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.05 }}
-                >
+                <div key={item.label}>
                   <button
                     onClick={() => handleNavClick(item)}
                     className="flex justify-between items-center w-full text-left py-4 border-b border-slate-800"
@@ -164,39 +159,29 @@ export const Navigation: React.FC<NavigationProps> = ({ onNavigate, currentView 
                     )}
                   </button>
 
-                  <AnimatePresence>
-                    {item.children && activeSubmenu === item.label && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="overflow-hidden bg-slate-800/50 -mx-6 px-6"
-                      >
-                        {item.children.map((child, childIndex) => (
-                          <motion.button
-                            key={child.label}
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: childIndex * 0.03 }}
-                            onClick={(e) => handleChildClick(e, child)}
-                            className="block w-full text-left py-3 pl-4 text-slate-300 hover:text-canadian-red transition-colors border-b border-slate-700/50 last:border-b-0"
-                          >
-                            <span className="flex items-center gap-2">
-                              <span className="w-1.5 h-1.5 bg-canadian-red rounded-full"></span>
-                              {child.label}
-                            </span>
-                          </motion.button>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
+                  {/* Submenu */}
+                  {item.children && activeSubmenu === item.label && (
+                    <div className="bg-slate-800/50 -mx-6 px-6">
+                      {item.children.map((child) => (
+                        <button
+                          key={child.label}
+                          onClick={(e) => handleChildClick(e, child)}
+                          className="block w-full text-left py-3 pl-4 text-slate-300 hover:text-canadian-red transition-colors border-b border-slate-700/50 last:border-b-0"
+                        >
+                          <span className="flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 bg-canadian-red rounded-full"></span>
+                            {child.label}
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
 
-            {/* Fixed bottom action buttons */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 bg-slate-900 border-t border-slate-800">
+            {/* Bottom action buttons */}
+            <div className="flex-shrink-0 p-6 bg-slate-900 border-t border-slate-800">
               <div className="flex gap-3">
                 <button className="flex items-center justify-center gap-2 flex-1 py-4 bg-slate-800 text-white font-medium rounded-sm hover:bg-slate-700 transition-colors">
                   <User className="w-5 h-5" />
