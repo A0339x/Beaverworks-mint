@@ -367,7 +367,18 @@ export const StoryPage: React.FC<StoryPageProps> = ({ pageId = 'story', onNaviga
                         {section.content}
                       </p>
                     )}
-                    {section.image && (
+                    {section.videoUrl && (
+                      <div className="mt-12 max-w-4xl mx-auto aspect-video">
+                        <iframe
+                          src={section.videoUrl}
+                          title={section.title || 'Video'}
+                          className="w-full h-full rounded-sm shadow-2xl"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        />
+                      </div>
+                    )}
+                    {section.image && !section.videoUrl && (
                       <div className="mt-12 max-w-4xl mx-auto">
                         <img src={section.image} alt={section.title} className="w-full rounded-sm shadow-2xl" />
                       </div>

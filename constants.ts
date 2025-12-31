@@ -800,7 +800,8 @@ Since there is only one opportunity for a first impression, it has to be done ri
         type: 'movieSection',
         title: "The Arrow Movie",
         subtitle: "A magnificent film that changed everything",
-        content: "The 1997 CBC miniseries 'The Arrow' brought the story of Canada's greatest aerospace achievement to life. Starring Dan Aykroyd as Crawford Gordon, it showed the world what Canadian innovation could accomplish—and what was lost when the program was cancelled."
+        content: "The 1997 CBC miniseries 'The Arrow' brought the story of Canada's greatest aerospace achievement to life. Starring Dan Aykroyd as Crawford Gordon, it showed the world what Canadian innovation could accomplish—and what was lost when the program was cancelled.",
+        videoUrl: "https://www.youtube.com/embed/aJwBHtYHIaw"
       },
       {
         type: 'gallery',
