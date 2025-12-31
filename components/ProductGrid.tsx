@@ -2,9 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const PRODUCTS = [
-  { id: 1, title: 'Avro Arrow', subtitle: 'Gold Edition', price: '$2,499 CAD', image: 'https://picsum.photos/id/111/600/600?grayscale' },
-  { id: 2, title: 'Silver Dart', subtitle: '100 Collection', price: '$149 CAD', image: 'https://picsum.photos/id/112/600/600?grayscale' },
-  { id: 3, title: 'Spitfire', subtitle: 'Legacy Series', price: '$129 CAD', image: 'https://picsum.photos/id/113/600/600?grayscale' },
+  { id: 1, title: 'The Golden Arrow', subtitle: 'The Coin They Tried to Kill', price: '$12,500.00', image: 'https://beaverworksmint.ca/wp-content/uploads/2025/08/GoldenArrow22.jpg' },
+  { id: 2, title: 'The RCAF Silver Maple', subtitle: 'Born from Grit', price: '$145.00', image: 'https://beaverworksmint.ca/wp-content/uploads/2025/08/SilverMaple1.jpg' },
+  { id: 3, title: 'The Supermarine Spitfire', subtitle: 'Legacy Series', price: '$155.00', image: 'https://beaverworksmint.ca/wp-content/uploads/2025/08/Spitfire.jpg' },
 ];
 
 export const ProductGrid: React.FC = () => {
