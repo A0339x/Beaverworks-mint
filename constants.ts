@@ -617,7 +617,8 @@ We believe music and minting share the same heartbeat: precision, discipline, an
       {
         type: 'embed',
         title: "Listen to Per Ardua Ad Astra",
-        embedUrl: "https://bandcamp.com/EmbeddedPlayer/album=2313670382/size=large/bgcol=ffffff/linkcol=0687f5/transparent=true/"
+        subtitle: "Click any track below to play",
+        embedUrl: "https://bandcamp.com/EmbeddedPlayer/album=2313670382/size=large/bgcol=ffffff/linkcol=c8102e/tracklist=true/transparent=true/"
       }
     ]
   },

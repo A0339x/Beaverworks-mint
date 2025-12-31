@@ -74,12 +74,15 @@ export const StoryPage: React.FC<StoryPageProps> = ({ pageId = 'story', onNaviga
               <div key={idx} className="container mx-auto px-6 mb-32">
                 <div className="max-w-3xl mx-auto">
                   {section.title && (
-                    <h2 className="text-3xl font-serif text-slate-900 mb-8 text-center">{section.title}</h2>
+                    <h2 className="text-3xl font-serif text-slate-900 mb-4 text-center">{section.title}</h2>
+                  )}
+                  {section.subtitle && (
+                    <p className="text-slate-500 text-center mb-8">{section.subtitle}</p>
                   )}
                   <div className="bg-white shadow-xl rounded-sm overflow-hidden">
                     <iframe
                       src={section.embedUrl}
-                      style={{ border: 0, width: '100%', height: '700px' }}
+                      style={{ border: 0, width: '100%', height: '920px' }}
                       seamless
                       title={section.title || 'Embedded content'}
                     />
