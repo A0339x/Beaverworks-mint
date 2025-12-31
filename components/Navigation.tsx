@@ -43,8 +43,6 @@ export const Navigation: React.FC<NavigationProps> = ({ onNavigate, currentView 
   // Helper for colors based on state
   const isDarkText = isScrolled || mobileMenuOpen || currentView !== 'home';
   const textColorClass = isDarkText ? 'text-slate-900' : 'text-white';
-  const borderColorClass = isDarkText ? 'bg-slate-900' : 'bg-white';
-  const fillClass = isDarkText ? 'fill-slate-900' : 'fill-white';
 
   return (
     <nav
@@ -53,42 +51,13 @@ export const Navigation: React.FC<NavigationProps> = ({ onNavigate, currentView 
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        {/* Brand Logo Recreation */}
-        <button onClick={() => onNavigate('home', 'home')} className="flex flex-col items-center group z-50 select-none">
-             <div className="flex flex-col items-center w-[160px] md:w-[180px]">
-                {/* Top Line & Leaf */}
-                <div className="relative w-full flex justify-center items-end mb-[2px]">
-                    <div className={`h-[1px] w-full ${borderColorClass} transition-colors duration-300 absolute bottom-[5px]`}></div>
-                    <div className={`relative z-10 ${textColorClass} transition-colors duration-300 bg-transparent`}>
-                         {/* Maple Leaf SVG - Positioned to break the line slightly visually or sit on top */}
-                         <div className={isDarkText ? 'bg-white/95 px-1' : 'bg-transparent px-1'}> 
-                             {/* Note: Background mask trick only works if bg is solid. For transparent header, we rely on z-index */}
-                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="transform translate-y-[2px]">
-                                <path d="M21.6 10.6l-4.2-1.4 1.7-3.6c0.3-0.7-0.3-1.4-1-1.1l-3.8 1.8-1-4C13.1 1.6 12.6 1.6 12.4 2.3l-1 4-3.8-1.8c-0.7-0.3-1.3 0.4-1 1.1l1.7 3.6-4.2 1.4c-0.7 0.2-0.8 1.2-0.1 1.6l3.5 1.9-1.6 4.1c-0.3 0.7 0.4 1.4 1.1 1.1l4-1.9v4.2c0 0.6 0.9 0.6 0.9 0l0-4.2 4 1.9c0.7 0.3 1.4-0.4 1.1-1.1l-1.6-4.1 3.5-1.9C22.4 11.8 22.3 10.8 21.6 10.6z"/>
-                             </svg>
-                         </div>
-                    </div>
-                </div>
-                
-                {/* BEAVERWORKS */}
-                <h1 className={`font-serif text-2xl md:text-3xl font-normal leading-none tracking-wide ${textColorClass} transition-colors duration-300`}>
-                  BEAVERWORKS
-                </h1>
-
-                {/* Middle Line */}
-                <div className={`h-[1px] w-full ${borderColorClass} transition-colors duration-300 my-[3px]`}></div>
-
-                {/* MINT */}
-                <div className={`flex justify-between w-full px-1 ${textColorClass} transition-colors duration-300`}>
-                    <span className="text-[10px] md:text-xs font-serif tracking-[0.4em]">M</span>
-                    <span className="text-[10px] md:text-xs font-serif tracking-[0.4em]">I</span>
-                    <span className="text-[10px] md:text-xs font-serif tracking-[0.4em]">N</span>
-                    <span className="text-[10px] md:text-xs font-serif tracking-[0.4em]">T</span>
-                </div>
-                
-                {/* Bottom Line */}
-                <div className={`h-[1px] w-full ${borderColorClass} transition-colors duration-300 mt-[3px]`}></div>
-             </div>
+        {/* Brand Logo */}
+        <button onClick={() => onNavigate('home', 'home')} className="z-50 select-none">
+          <img
+            src="/logo-1.png"
+            alt="Beaverworks Mint"
+            className={`h-12 md:h-16 w-auto transition-all duration-300 ${isDarkText ? '' : 'invert'}`}
+          />
         </button>
 
         {/* Desktop Menu */}
