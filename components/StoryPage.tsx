@@ -116,6 +116,12 @@ export const StoryPage: React.FC<StoryPageProps> = ({ pageId = 'story', onNaviga
                           className="w-full h-full object-cover"
                         />
                       </div>
+                      {/* Instruction when track is selected */}
+                      {selectedTrack && (
+                        <div className="bg-canadian-red text-white text-center py-2 text-sm font-medium animate-pulse">
+                          ▶ Press play below to start listening
+                        </div>
+                      )}
                       {/* Bandcamp player - updates when track is selected */}
                       <iframe
                         key={selectedTrack || 'default'}
