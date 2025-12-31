@@ -433,7 +433,7 @@ export const StoryPage: React.FC<StoryPageProps> = ({ pageId = 'story', onNaviga
             );
           }
 
-          // Standard Type: Text and Image split
+          // Standard Type: Text and Image/Video split
           return (
             <div key={idx} className="container mx-auto px-6 mb-32">
                 <div className={`flex flex-col md:flex-row items-center gap-16 ${section.imageAlign === 'left' ? 'md:flex-row-reverse' : ''}`}>
@@ -444,7 +444,25 @@ export const StoryPage: React.FC<StoryPageProps> = ({ pageId = 'story', onNaviga
                             {section.content}
                         </div>
                     </div>
-                    {section.image && (
+                    {section.videoUrl ? (
+                        <div className="flex-1 w-full">
+                            <motion.div
+                                initial={{ opacity: 0, x: section.imageAlign === 'left' ? -30 : 30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8 }}
+                                className="aspect-video"
+                            >
+                                <iframe
+                                    src={section.videoUrl}
+                                    title={section.title || 'Video'}
+                                    className="w-full h-full shadow-2xl rounded-sm"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                />
+                            </motion.div>
+                        </div>
+                    ) : section.image && (
                         <div className="flex-1 w-full">
                             <motion.div
                                 initial={{ opacity: 0, x: section.imageAlign === 'left' ? -30 : 30 }}
