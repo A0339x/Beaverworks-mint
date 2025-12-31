@@ -751,7 +751,8 @@ The film stands as both memorial and battle cry. It shows us what we were capabl
         type: 'videoHero',
         title: "Golden Performance",
         subtitle: "OUR HIGHEST ACHIEVEMENT",
-        image: "https://beaverworksmint.ca/wp-content/uploads/2025/07/GoldenBanner-scaled.jpg"
+        image: "https://beaverworksmint.ca/wp-content/uploads/2025/07/GoldenBanner-scaled.jpg",
+        videoUrl: "https://www.youtube.com/embed/DO309HBUBcI?autoplay=1&mute=1&loop=1&playlist=DO309HBUBcI&controls=0&showinfo=0&rel=0&modestbranding=1"
       },
       {
         type: 'productInfo',

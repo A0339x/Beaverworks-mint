@@ -265,10 +265,25 @@ export const StoryPage: React.FC<StoryPageProps> = ({ pageId = 'story', onNaviga
 
           // Video Hero Type: Full screen video background with text overlay
           if (section.type === 'videoHero') {
+            const isYouTube = section.videoUrl?.includes('youtube.com');
             return (
               <div key={idx} className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden -mt-24">
                 <div className="absolute inset-0">
-                  {section.videoUrl ? (
+                  {section.videoUrl && isYouTube ? (
+                    <div className="absolute inset-0 w-full h-full overflow-hidden">
+                      <iframe
+                        src={section.videoUrl}
+                        title="Background video"
+                        className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 scale-150"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        style={{ pointerEvents: 'none' }}
+                      />
+                      {/* Fallback image for when YouTube doesn't autoplay */}
+                      {section.image && (
+                        <img src={section.image} className="absolute inset-0 w-full h-full object-cover -z-10" alt="" />
+                      )}
+                    </div>
+                  ) : section.videoUrl ? (
                     <video
                       autoPlay
                       muted
