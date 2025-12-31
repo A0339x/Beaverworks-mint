@@ -626,12 +626,12 @@ This is Beaverworks Mint. Built from nothing. Forged with purpose. Minted for Ca
             type: "video"
           },
           {
-            title: "Beaverworks Mint Feature",
+            title: "Valuable coins reunited with owner after being left in St. John's taxi",
             source: "CBC Newfoundland",
-            date: "2016",
+            date: "June 2016",
             description: "There are no words to convey how much I love the people of Newfoundland and Labrador.",
             image: "https://beaverworksmint.ca/wp-content/uploads/2025/07/CBC2-scaled.jpg",
-            link: "https://www.cbc.ca/player/play/video/1.3633160",
+            link: "https://www.cbc.ca/news/canada/newfoundland-labrador/cabbie-returns-missing-coins-1.3632396",
             type: "article"
           }
         ]
