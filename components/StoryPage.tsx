@@ -106,24 +106,22 @@ export const StoryPage: React.FC<StoryPageProps> = ({ pageId = 'story', onNaviga
                   {section.subtitle && (
                     <p className="text-slate-500 text-center mb-10">{section.subtitle}</p>
                   )}
-                  <div className="flex flex-col md:flex-row bg-white shadow-xl rounded-sm overflow-visible">
+                  <div className="flex flex-col md:flex-row bg-white shadow-xl rounded-sm">
                     {/* Album Art with embedded player */}
-                    <div className="md:w-1/2 flex flex-col">
-                      <div className="relative" style={{ paddingBottom: '100%' }}>
-                        <img
-                          src={section.albumArt}
-                          alt={section.title || 'Album'}
-                          className="absolute inset-0 w-full h-full object-cover"
-                        />
-                      </div>
+                    <div className="md:w-2/5 flex flex-col bg-[#333333]">
+                      <img
+                        src={section.albumArt}
+                        alt={section.title || 'Album'}
+                        className="w-full h-auto object-cover"
+                      />
                       {/* Instruction when track is selected */}
                       {selectedTrack && (
                         <div className="bg-canadian-red text-white text-center py-3 text-sm font-medium animate-pulse">
-                          ▶ Press the play button below to start listening
+                          ▶ Press play below to start
                         </div>
                       )}
                       {/* Bandcamp player - updates when track is selected */}
-                      <div className="bg-[#333333] p-2">
+                      <div className="p-3">
                         <iframe
                           key={selectedTrack || 'default'}
                           src={`https://bandcamp.com/EmbeddedPlayer/album=${section.bandcampAlbumId}${trackParam}/size=large/bgcol=333333/linkcol=c8102e/minimal=true/transparent=true/`}
@@ -134,7 +132,7 @@ export const StoryPage: React.FC<StoryPageProps> = ({ pageId = 'story', onNaviga
                       </div>
                     </div>
                     {/* Track List */}
-                    <div className="md:w-1/2 p-6 md:p-8 overflow-y-auto" style={{ maxHeight: '550px' }}>
+                    <div className="md:w-3/5 p-6 md:p-8 overflow-y-auto" style={{ maxHeight: '500px' }}>
                       <h3 className="text-xs font-bold tracking-[0.2em] uppercase text-slate-400 mb-6">Track List — Click to Play</h3>
                       <ul className="space-y-1">
                         {section.tracks?.map((track, trackIdx) => (
