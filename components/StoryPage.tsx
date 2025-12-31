@@ -124,8 +124,8 @@ export const StoryPage: React.FC<StoryPageProps> = ({ pageId = 'story', onNaviga
                       <div className="p-3">
                         <iframe
                           key={selectedTrack || 'default'}
-                          src={`https://bandcamp.com/EmbeddedPlayer/album=${section.bandcampAlbumId}${trackParam}/size=large/bgcol=333333/linkcol=c8102e/minimal=true/transparent=true/`}
-                          style={{ border: 0, width: '100%', height: '42px' }}
+                          src={`https://bandcamp.com/EmbeddedPlayer/album=${section.bandcampAlbumId}${trackParam}/size=small/bgcol=333333/linkcol=c8102e/transparent=true/`}
+                          style={{ border: 0, width: '100%', height: '120px' }}
                           seamless
                           title="Music player"
                         />
