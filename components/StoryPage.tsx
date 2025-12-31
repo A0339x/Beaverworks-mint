@@ -96,7 +96,7 @@ export const StoryPage: React.FC<StoryPageProps> = ({ pageId = 'story', onNaviga
 
           // Music Player Type: Side-by-side album art and track list
           if (section.type === 'musicPlayer') {
-            const trackParam = selectedTrack ? `/track=${selectedTrack}` : '';
+            const trackParam = selectedTrack ? `/track=${selectedTrack}/` : '';
             return (
               <div key={idx} className="container mx-auto px-6 mb-32">
                 <div className="max-w-5xl mx-auto">
@@ -138,18 +138,18 @@ export const StoryPage: React.FC<StoryPageProps> = ({ pageId = 'story', onNaviga
                         {section.tracks?.map((track, trackIdx) => (
                           <li
                             key={trackIdx}
-                            onClick={() => setSelectedTrack(track.trackNum)}
-                            className={`flex justify-between items-center py-3 border-b border-gray-100 hover:bg-gray-50 transition-colors cursor-pointer group ${selectedTrack === track.trackNum ? 'bg-gray-50' : ''}`}
+                            onClick={() => setSelectedTrack(track.trackId)}
+                            className={`flex justify-between items-center py-3 border-b border-gray-100 hover:bg-gray-50 transition-colors cursor-pointer group ${selectedTrack === track.trackId ? 'bg-gray-50' : ''}`}
                           >
                             <div className="flex items-center gap-4">
-                              <span className={`w-6 h-6 flex items-center justify-center rounded-full text-sm ${selectedTrack === track.trackNum ? 'bg-canadian-red text-white' : 'text-slate-400 group-hover:bg-canadian-red group-hover:text-white'} transition-colors`}>
-                                {selectedTrack === track.trackNum ? (
+                              <span className={`w-6 h-6 flex items-center justify-center rounded-full text-sm ${selectedTrack === track.trackId ? 'bg-canadian-red text-white' : 'text-slate-400 group-hover:bg-canadian-red group-hover:text-white'} transition-colors`}>
+                                {selectedTrack === track.trackId ? (
                                   <Play className="w-3 h-3 fill-current" />
                                 ) : (
                                   trackIdx + 1
                                 )}
                               </span>
-                              <span className={`${selectedTrack === track.trackNum ? 'text-canadian-red font-medium' : 'text-slate-900 group-hover:text-canadian-red'} transition-colors`}>{track.title}</span>
+                              <span className={`${selectedTrack === track.trackId ? 'text-canadian-red font-medium' : 'text-slate-900 group-hover:text-canadian-red'} transition-colors`}>{track.title}</span>
                             </div>
                           </li>
                         ))}

@@ -621,20 +621,20 @@ We believe music and minting share the same heartbeat: precision, discipline, an
         albumArt: "https://beaverworksmint.ca/wp-content/uploads/2025/07/Album.jpg",
         bandcampAlbumId: "2313670382",
         tracks: [
-          { title: "USAF vs RCAF", trackNum: 1 },
-          { title: "Royal Canadian Pride Machine", trackNum: 2 },
-          { title: "Minted Nights", trackNum: 3 },
-          { title: "Canadian Beaver", trackNum: 4 },
-          { title: "Royal Wings", trackNum: 5 },
-          { title: "Shattering The Dream", trackNum: 6 },
-          { title: "Feathers Fly", trackNum: 7 },
-          { title: "Maple Drips", trackNum: 8 },
-          { title: "Eagles Cry", trackNum: 9 },
-          { title: "Coins of Madness", trackNum: 10 },
-          { title: "Minted Madness", trackNum: 11 },
-          { title: "Crazy Coins", trackNum: 12 },
-          { title: "Coins of Flair", trackNum: 13 },
-          { title: "Pelican Pitches", trackNum: 14 }
+          { title: "USAF vs RCAF", trackId: 2471547931 },
+          { title: "Royal Canadian Pride Machine", trackId: 2741235101 },
+          { title: "Minted Nights", trackId: 2720296251 },
+          { title: "Canadian Beaver", trackId: 1674012519 },
+          { title: "Royal Wings", trackId: 2794692600 },
+          { title: "Shattering The Dream", trackId: 1730328249 },
+          { title: "Feathers Fly", trackId: 2312593314 },
+          { title: "Maple Drips", trackId: 2164003609 },
+          { title: "Eagles Cry", trackId: 1508829691 },
+          { title: "Coins of Madness", trackId: 2776333973 },
+          { title: "Minted Madness", trackId: 2752730704 },
+          { title: "Crazy Coins", trackId: 3248265316 },
+          { title: "Coins of Flair", trackId: 4191758437 },
+          { title: "Pelican Pitches", trackId: 3661496476 }
         ]
       }
     ]
