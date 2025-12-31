@@ -657,7 +657,7 @@ This is Beaverworks Mint. Built from nothing. Forged with purpose. Minted for Ca
 When you hold one of our coins, you're holding gold that was responsibly refined right here in Canada, under some of the strictest ethical and environmental standards anywhere. This gold has passed through the hands of a Crown Corporation with a legacy of excellence and a reputation built on honour — and it continues that legacy in the form of every coin we strike.
 
 By using only gold from the Royal Canadian Mint, we ensure that our art is rooted in integrity, traceability, and Canadian pride.`,
-        image: "https://beaverworksmint.ca/wp-content/uploads/2025/07/GoldA1.jpg",
+        image: "https://beaverworksmint.ca/wp-content/uploads/2025/07/GMA1.jpg",
         imageAlign: 'right'
       },
       {
