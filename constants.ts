@@ -621,7 +621,7 @@ This is Beaverworks Mint. Built from nothing. Forged with purpose. Minted for Ca
             source: "YouTube",
             date: "2016",
             description: "Proud to be Canadian. An interview about the Space Flag project and Canadian heritage.",
-            image: "https://beaverworksmint.ca/wp-content/uploads/2025/07/DaveNagy.jpg",
+            image: "https://img.youtube.com/vi/efqkWNzy57A/maxresdefault.jpg",
             link: "https://www.youtube.com/watch?v=efqkWNzy57A",
             type: "video"
           },
