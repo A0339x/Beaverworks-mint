@@ -122,7 +122,8 @@ export const Navigation: React.FC<NavigationProps> = ({ onNavigate, currentView 
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden fixed inset-0 bg-slate-900 z-40 flex flex-col"
+            className="lg:hidden fixed inset-0 bg-slate-900 z-40 flex flex-col h-screen"
+            style={{ height: '100dvh' }}
           >
             {/* Header area with logo and close button */}
             <div className="flex-shrink-0 flex justify-between items-center px-6 py-4 border-b border-slate-800">
@@ -140,7 +141,7 @@ export const Navigation: React.FC<NavigationProps> = ({ onNavigate, currentView 
             </div>
 
             {/* Scrollable menu content - flex-1 takes remaining space */}
-            <div className="flex-1 overflow-y-auto px-6 py-4">
+            <div className="flex-1 min-h-0 overflow-y-auto px-6 py-4">
               {NAV_ITEMS.map((item, index) => (
                 <div key={item.label}>
                   <button
@@ -180,15 +181,15 @@ export const Navigation: React.FC<NavigationProps> = ({ onNavigate, currentView 
               ))}
             </div>
 
-            {/* Bottom action buttons */}
-            <div className="flex-shrink-0 p-6 bg-slate-900 border-t border-slate-800">
-              <div className="flex gap-3">
-                <button className="flex items-center justify-center gap-2 flex-1 py-4 bg-slate-800 text-white font-medium rounded-sm hover:bg-slate-700 transition-colors">
-                  <User className="w-5 h-5" />
+            {/* Bottom action buttons - compact */}
+            <div className="flex-shrink-0 px-6 py-3 bg-slate-800 border-t border-slate-700 safe-area-bottom">
+              <div className="flex gap-2">
+                <button className="flex items-center justify-center gap-2 flex-1 py-2.5 bg-slate-700 text-white text-sm font-medium rounded hover:bg-slate-600 transition-colors">
+                  <User className="w-4 h-4" />
                   Account
                 </button>
-                <button className="flex items-center justify-center gap-2 flex-1 py-4 bg-canadian-red text-white font-medium rounded-sm hover:bg-red-700 transition-colors">
-                  <ShoppingBag className="w-5 h-5" />
+                <button className="flex items-center justify-center gap-2 flex-1 py-2.5 bg-canadian-red text-white text-sm font-medium rounded hover:bg-red-700 transition-colors">
+                  <ShoppingBag className="w-4 h-4" />
                   Cart
                 </button>
               </div>
