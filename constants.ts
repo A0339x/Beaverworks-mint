@@ -621,7 +621,7 @@ This is Beaverworks Mint. Built from nothing. Forged with purpose. Minted for Ca
             source: "YouTube",
             date: "2016",
             description: "Proud to be Canadian. An interview about the Space Flag project and Canadian heritage.",
-            image: "https://img.youtube.com/vi/efqkWNzy57A/maxresdefault.jpg",
+            image: "https://www.asc-csa.gc.ca/images/recherche//hi-res/68f46b6c-a357-440c-970a-a17612fdaf6d.jpg",
             link: "https://www.youtube.com/watch?v=efqkWNzy57A",
             type: "video"
           },
