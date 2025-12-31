@@ -176,17 +176,17 @@ The Golden Arrow was never meant to fly—at least not by those who tried to sil
   },
   'watches': {
     title: "Timepieces",
-    subtitle: "Custom RCAF",
-    heroHeadline: "PRECISION TIMING",
-    heroSubheadline: "SWISS MOVEMENT, CANADIAN HEART",
-    heroImage: "https://beaverworksmint.ca/wp-content/uploads/2025/07/headerwatch.jpg",
-    contentTitle: "For Those Who Fly",
-    content: `Every great pilot deserves a great watch, and our leader believed the RCAF deserved its own Swiss-made and Japanese-made timepieces. 
+    subtitle: "Custom Swiss & Japanese Made",
+    heroHeadline: "WE APPRECIATE TIME",
+    heroSubheadline: "CUSTOM MADE SWISS AND JAPANESE MADE WATCHES",
+    heroImage: "https://beaverworksmint.ca/wp-content/uploads/2025/07/watch1.jpg",
+    contentTitle: "A Gift for ISS Commander Chris Hadfield",
+    content: `A number of years ago, we produced a very small run of custom Swiss and Japanese made watches for the RCAF. Every great pilot deserves a great watch, and our leader believed the RCAF deserved its own timepieces.
 
-Featured above is a special watch we created and gifted to RCAF Colonel, Canadian astronaut, and first Canadian to command the International Space Station — Commander Chris Hadfield.
+Here is a custom, one of a kind watch we made as a gift for Commander Chris Hadfield, the first Canadian to command the International Space Station.
 
-Our vision includes crafting our own watches with Swiss-made movements and collaborating with prestigious Zurich-based watchmakers. We had to pause this venture to focus on building the mint and studio, but stay tuned for more updates.`,
-    secondaryImage: "https://beaverworksmint.ca/wp-content/uploads/2025/07/Hadfield-Joe.jpg"
+We are only interested in producing the high end. Our vision includes crafting our own watches with Swiss-made movements and collaborating with prestigious Zurich-based watchmakers. We had to pause this venture to focus on building the mint and studio, but stay tuned for more updates.`,
+    secondaryImage: "https://beaverworksmint.ca/wp-content/uploads/2025/07/w9.jpg"
   },
   'badges': {
     title: "Flight Badges",
@@ -861,16 +861,49 @@ export const ALL_PRODUCTS: ProductHighlight[] = [
     specs: [{label: 'Type', value: 'Custom Box'}, {label: 'Availability', value: 'While Supplies Last'}]
   },
   
-  // --- Watches (Placeholder/Future) ---
-  { 
-    id: 'rcaf-watch', 
-    title: 'RCAF Commander Edition', 
-    subtitle: 'Swiss Movement', 
-    price: 'Coming Soon', 
+  // --- Watches ---
+  {
+    id: 'hadfield-watch',
+    title: 'Commander Hadfield Edition',
+    subtitle: 'ISS Commander Tribute',
+    price: 'One of a Kind',
     category: 'watches',
-    image: 'https://picsum.photos/id/175/800/800?grayscale',
-    description: "Custom designed for the RCAF. Featured above is a special watch we created and gifted to Commander Chris Hadfield.",
-    longDescription: "Every great pilot deserves a great watch. Our vision includes crafting our own watches with Swiss-made movements and collaborating with prestigious Zurich-based watchmakers. Please stay tuned for more updates.",
-    specs: [{label: 'Movement', value: 'Swiss'}, {label: 'Origin', value: 'Zurich/Canada'}]
+    image: 'https://beaverworksmint.ca/wp-content/uploads/2025/07/w9.jpg',
+    description: "A custom, one of a kind watch made as a gift for Commander Chris Hadfield, the first Canadian to command the International Space Station.",
+    longDescription: "This exclusive timepiece was personally crafted and gifted to RCAF Colonel and Canadian astronaut Chris Hadfield. A tribute to Canadian excellence in space exploration and military service.",
+    specs: [{label: 'Movement', value: 'Swiss'}, {label: 'Edition', value: 'Unique'}, {label: 'Recipient', value: 'Col. Chris Hadfield'}]
+  },
+  {
+    id: 'rcaf-pilot-watch',
+    title: 'RCAF Pilot Edition',
+    subtitle: 'Swiss Movement',
+    price: 'Coming Soon',
+    category: 'watches',
+    image: 'https://beaverworksmint.ca/wp-content/uploads/2025/07/w3.jpg',
+    description: "Custom designed for RCAF pilots. Swiss-made movement with Canadian craftsmanship.",
+    longDescription: "Every great pilot deserves a great watch. Our vision includes crafting our own watches with Swiss-made movements and collaborating with prestigious Zurich-based watchmakers.",
+    specs: [{label: 'Movement', value: 'Swiss'}, {label: 'Origin', value: 'Canada'}]
+  },
+  {
+    id: 'aviator-chronograph',
+    title: 'Aviator Chronograph',
+    subtitle: 'Japanese Movement',
+    price: 'Coming Soon',
+    category: 'watches',
+    image: 'https://beaverworksmint.ca/wp-content/uploads/2025/07/w5.jpg',
+    description: "Precision Japanese movement paired with aviation-inspired design.",
+    longDescription: "A timepiece designed for those who appreciate precision and the spirit of flight. Japanese movement ensures reliability and accuracy.",
+    specs: [{label: 'Movement', value: 'Japanese'}, {label: 'Style', value: 'Chronograph'}]
+  },
+  {
+    id: 'centennial-watch',
+    title: 'RCAF Centennial',
+    subtitle: 'Limited Edition',
+    price: 'Coming Soon',
+    category: 'watches',
+    image: 'https://beaverworksmint.ca/wp-content/uploads/2025/07/w8.jpg',
+    description: "Commemorating 100 years of the Royal Canadian Air Force.",
+    longDescription: "A limited edition timepiece created to honour the centennial of the Royal Canadian Air Force. Swiss craftsmanship meets Canadian heritage.",
+    specs: [{label: 'Movement', value: 'Swiss'}, {label: 'Edition', value: 'Centennial Limited'}]
   },
 ];
