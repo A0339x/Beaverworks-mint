@@ -837,13 +837,13 @@ Since there is only one opportunity for a first impression, it has to be done ri
   'silver-arrow': {
     title: "The Silver Arrow",
     subtitle: "The Coin That Started It All",
-    headerImage: "https://beaverworksmint.ca/wp-content/uploads/2025/07/SA2.jpg",
+    headerImage: "https://beaverworksmint.ca/wp-content/uploads/2025/07/Arrowside-scaled.jpg",
     sections: [
       {
         type: 'videoHero',
         title: "The Silver Arrow",
         subtitle: "THE COIN THAT STARTED IT ALL",
-        image: "https://beaverworksmint.ca/wp-content/uploads/2025/07/20150817_073833-scaled.jpg"
+        image: "https://beaverworksmint.ca/wp-content/uploads/2025/07/Arrowside-scaled.jpg"
       },
       {
         type: 'productInfo',
@@ -867,7 +867,7 @@ Since there is only one opportunity for a first impression, it has to be done ri
 When he started this, his emphasis was exclusively on beauty. It always has been and always will be to the exclusion of all else. He didn't care what the costs were—he wanted what he wanted. And since it would be dedicated to the AVRO Arrow and the Royal Canadian Air Force, it could not just be good. It had to be beyond exceptional to reflect Green's high regard for both the Arrow and the RCAF.
 
 As an artist, trained at the prestigious Emily Carr Institute, Green paid close attention to every possible aspect of the symbolism within the coin. Given the RCAF was flying towards their 100th Anniversary, he created 100 tiny squares around the perimeter to reflect its anniversary. And because the first Arrow to fly was RL-201, he placed 201 tiny round dots around the interior perimeter to reflect this—something which all coins issued by Beaverworks Mint still to this day reflects, connecting all coins to their historical origins.`,
-        image: "https://beaverworksmint.ca/wp-content/uploads/2025/07/SA2.jpg",
+        image: "https://beaverworksmint.ca/wp-content/uploads/2025/07/20150817_073833-scaled.jpg",
         imageAlign: 'right'
       },
       {
@@ -906,7 +906,7 @@ A Canadian dream, preserved.
 The finest coin, in the World.
 
 Every single coin made has a serialized, engraved edge, marking its exact issue number. It truly is not just a coin, but a performance piece which can move people to tears. The day these arrived, the designer, trained at the prestigious Emily Carr Institute of Art + Design, broke down in tears. And so too have a number of recipients of this one-of-a-kind, uniquely Canadian experience.`,
-        image: "https://beaverworksmint.ca/wp-content/uploads/2025/07/SA1.jpg",
+        image: "https://beaverworksmint.ca/wp-content/uploads/2025/07/Arrowside-scaled.jpg",
         imageAlign: 'right'
       },
       {
@@ -914,11 +914,21 @@ Every single coin made has a serialized, engraved edge, marking its exact issue 
         title: "Gallery",
         subtitle: "The Silver Arrow Collection",
         images: [
-          "https://beaverworksmint.ca/wp-content/uploads/2025/07/SA2.jpg",
-          "https://beaverworksmint.ca/wp-content/uploads/2025/07/SA1.jpg",
-          "https://beaverworksmint.ca/wp-content/uploads/2025/07/SA3.jpg",
+          "https://beaverworksmint.ca/wp-content/uploads/2025/07/001-2.jpg",
+          "https://beaverworksmint.ca/wp-content/uploads/2025/07/002-1.jpg",
+          "https://beaverworksmint.ca/wp-content/uploads/2025/07/003-2.jpg",
+          "https://beaverworksmint.ca/wp-content/uploads/2025/07/004-2.jpg",
+          "https://beaverworksmint.ca/wp-content/uploads/2025/07/005-2.jpg",
+          "https://beaverworksmint.ca/wp-content/uploads/2025/07/006-2.jpg",
+          "https://beaverworksmint.ca/wp-content/uploads/2025/07/007-2.jpg",
+          "https://beaverworksmint.ca/wp-content/uploads/2025/07/007A.jpg",
+          "https://beaverworksmint.ca/wp-content/uploads/2025/07/008-1.jpg",
+          "https://beaverworksmint.ca/wp-content/uploads/2025/07/009-2.jpg",
+          "https://beaverworksmint.ca/wp-content/uploads/2025/07/010-2.jpg",
+          "https://beaverworksmint.ca/wp-content/uploads/2025/07/011-2.jpg",
           "https://beaverworksmint.ca/wp-content/uploads/2025/07/20150817_073833-scaled.jpg",
-          "https://beaverworksmint.ca/wp-content/uploads/2025/07/20150817_073641-scaled.jpg"
+          "https://beaverworksmint.ca/wp-content/uploads/2025/07/20150817_073641-scaled.jpg",
+          "https://beaverworksmint.ca/wp-content/uploads/2025/07/Arrowside-scaled.jpg"
         ]
       }
     ]
