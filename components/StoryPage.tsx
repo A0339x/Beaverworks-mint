@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Play } from 'lucide-react';
 import { PAGE_CONTENT } from '../constants';
 import { CallToAction } from './CallToAction';
 
@@ -10,6 +11,7 @@ interface StoryPageProps {
 
 export const StoryPage: React.FC<StoryPageProps> = ({ pageId = 'story', onNavigate }) => {
   const content = PAGE_CONTENT[pageId] || PAGE_CONTENT['story'];
+  const [selectedTrack, setSelectedTrack] = useState<number | null>(null);
 
   return (
     <div className="min-h-screen bg-white">
@@ -94,6 +96,7 @@ export const StoryPage: React.FC<StoryPageProps> = ({ pageId = 'story', onNaviga
 
           // Music Player Type: Side-by-side album art and track list
           if (section.type === 'musicPlayer') {
+            const trackParam = selectedTrack ? `/track=${selectedTrack}` : '';
             return (
               <div key={idx} className="container mx-auto px-6 mb-32">
                 <div className="max-w-5xl mx-auto">
@@ -103,8 +106,8 @@ export const StoryPage: React.FC<StoryPageProps> = ({ pageId = 'story', onNaviga
                   {section.subtitle && (
                     <p className="text-slate-500 text-center mb-10">{section.subtitle}</p>
                   )}
-                  <div className="flex flex-col md:flex-row gap-8 bg-white shadow-xl rounded-sm overflow-hidden">
-                    {/* Album Art with embedded mini player */}
+                  <div className="flex flex-col md:flex-row bg-white shadow-xl rounded-sm overflow-hidden">
+                    {/* Album Art with embedded player */}
                     <div className="md:w-1/2">
                       <div className="aspect-square relative">
                         <img
@@ -113,28 +116,35 @@ export const StoryPage: React.FC<StoryPageProps> = ({ pageId = 'story', onNaviga
                           className="w-full h-full object-cover"
                         />
                       </div>
-                      {/* Mini Bandcamp player for actual playback */}
+                      {/* Bandcamp player - updates when track is selected */}
                       <iframe
-                        src={`https://bandcamp.com/EmbeddedPlayer/album=${section.bandcampAlbumId}/size=small/bgcol=ffffff/linkcol=c8102e/transparent=true/`}
-                        style={{ border: 0, width: '100%', height: '42px' }}
+                        key={selectedTrack || 'default'}
+                        src={`https://bandcamp.com/EmbeddedPlayer/album=${section.bandcampAlbumId}${trackParam}/size=large/bgcol=333333/linkcol=c8102e/minimal=true/transparent=true/`}
+                        style={{ border: 0, width: '100%', height: '120px' }}
                         seamless
                         title="Music player"
                       />
                     </div>
                     {/* Track List */}
-                    <div className="md:w-1/2 p-6 md:p-8">
-                      <h3 className="text-xs font-bold tracking-[0.2em] uppercase text-slate-400 mb-6">Track List</h3>
+                    <div className="md:w-1/2 p-6 md:p-8 max-h-[600px] overflow-y-auto">
+                      <h3 className="text-xs font-bold tracking-[0.2em] uppercase text-slate-400 mb-6">Track List — Click to Play</h3>
                       <ul className="space-y-1">
                         {section.tracks?.map((track, trackIdx) => (
                           <li
                             key={trackIdx}
-                            className="flex justify-between items-center py-3 border-b border-gray-100 hover:bg-gray-50 transition-colors cursor-pointer group"
+                            onClick={() => setSelectedTrack(track.trackNum)}
+                            className={`flex justify-between items-center py-3 border-b border-gray-100 hover:bg-gray-50 transition-colors cursor-pointer group ${selectedTrack === track.trackNum ? 'bg-gray-50' : ''}`}
                           >
                             <div className="flex items-center gap-4">
-                              <span className="text-slate-400 text-sm w-6">{trackIdx + 1}</span>
-                              <span className="text-slate-900 group-hover:text-canadian-red transition-colors">{track.title}</span>
+                              <span className={`w-6 h-6 flex items-center justify-center rounded-full text-sm ${selectedTrack === track.trackNum ? 'bg-canadian-red text-white' : 'text-slate-400 group-hover:bg-canadian-red group-hover:text-white'} transition-colors`}>
+                                {selectedTrack === track.trackNum ? (
+                                  <Play className="w-3 h-3 fill-current" />
+                                ) : (
+                                  trackIdx + 1
+                                )}
+                              </span>
+                              <span className={`${selectedTrack === track.trackNum ? 'text-canadian-red font-medium' : 'text-slate-900 group-hover:text-canadian-red'} transition-colors`}>{track.title}</span>
                             </div>
-                            <span className="text-slate-400 text-sm">{track.duration}</span>
                           </li>
                         ))}
                       </ul>
@@ -144,7 +154,7 @@ export const StoryPage: React.FC<StoryPageProps> = ({ pageId = 'story', onNaviga
                         rel="noopener noreferrer"
                         className="inline-block mt-8 text-xs font-bold tracking-[0.2em] uppercase text-canadian-red hover:text-canadian-dark transition-colors"
                       >
-                        Listen on Bandcamp →
+                        View Full Album on Bandcamp →
                       </a>
                     </div>
                   </div>

@@ -70,6 +70,6 @@ export interface PageContent {
     embedUrl?: string; // For embedded content like Bandcamp players
     albumArt?: string; // For music player
     bandcampAlbumId?: string; // For music player
-    tracks?: { title: string; duration: string }[]; // For music player
+    tracks?: { title: string; trackNum: number }[]; // For music player
   }[];
 }
