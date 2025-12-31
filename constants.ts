@@ -42,6 +42,7 @@ export const NAV_ITEMS: NavItem[] = [
   },
   { label: 'Flight Badges', id: 'badges', type: 'category' },
   { label: 'Watches', id: 'watches', type: 'category' },
+  { label: 'Music', id: 'music', type: 'page' },
   { label: 'Our Story', id: 'story', type: 'page' },
   { label: 'Contact', id: 'contact', type: 'page' },
 ];
@@ -597,6 +598,29 @@ This is Beaverworks Mint. Built from nothing. Forged with purpose. Minted for Ca
       }
     ]
   },
+  music: {
+    title: "Music in Precious Metal",
+    subtitle: "Per Ardua Ad Astra",
+    headerImage: "https://beaverworksmint.ca/wp-content/uploads/2025/07/Album.jpg",
+    sections: [
+      {
+        type: 'standard',
+        title: "A Creative Collaboration",
+        content: `At Beaverworks Mint, we've always believed that art doesn't live in silos. Just as steel can be shaped into dies and silver pressed into memory, so too can music tell a story — of struggle, craftsmanship, and legacy. That's why it is our distinct honour to announce a powerful creative collaboration with Canada's most prolific hip-hop producer, Marek Czuba, who graciously offered his time and talent to help shape the rhythm behind our mission.
+
+Czuba — known for his masterful fusion of swing, jazz, big band, and modern beats — has produced an album that sonically narrates our journey. From the soaring ambition of launching The 100 Collection, to the sleepless months of building a mint from scratch, to the moment of triumph as we struck our first coins dedicated to the Royal Canadian Air Force — his music captures it all. It's more than a soundtrack. It's an anthem of resilience, a celebration of ingenuity, and a sonic signature embedded into the soul of Beaverworks Mint.
+
+We believe music and minting share the same heartbeat: precision, discipline, and soul. And now, you can hear the echoes of that heartbeat in every track, just as you see it reflected in every coin. We will be releasing more albums as time goes on. This album is simply amazing! Thank you brother!`,
+        image: "https://beaverworksmint.ca/wp-content/uploads/2025/07/Album.jpg",
+        imageAlign: 'left'
+      },
+      {
+        type: 'embed',
+        title: "Listen to Per Ardua Ad Astra",
+        embedUrl: "https://bandcamp.com/EmbeddedPlayer/album=2313670382/size=large/bgcol=ffffff/linkcol=0687f5/transparent=true/"
+      }
+    ]
+  },
   services: {
     title: "Our Services",
     subtitle: "Craftsmanship & Expertise",
@@ -607,15 +631,13 @@ This is Beaverworks Mint. Built from nothing. Forged with purpose. Minted for Ca
         title: "What We Offer",
         content: `Beaverworks Mint is Western Canada's only operating private mint, offering a complete range of services for collectors, organizations, and businesses seeking exceptional commemorative pieces.
 
-Our services include:
+Leadership — Learn about the visionaries and master craftsmen behind Beaverworks Mint.
 
-**Leadership** — Learn about the visionaries and master craftsmen behind Beaverworks Mint.
+Consulting — Custom coin design and minting services for organizations, military units, corporations, and private collectors.
 
-**Consulting** — Custom coin design and minting services for organizations, military units, corporations, and private collectors.
+Sculpting — Master-level digital sculpting and engraving by industry veterans, including former Royal Canadian Mint senior engravers.
 
-**Sculpting** — Master-level digital sculpting and engraving by industry veterans, including former Royal Canadian Mint senior engravers.
-
-**Striking** — Precision minting using our custom-built hydraulic press system, capable of producing museum-quality proof coins.
+Striking — Precision minting using our custom-built hydraulic press system, capable of producing museum-quality proof coins.
 
 Every project we undertake is guided by our commitment to excellence, authenticity, and Canadian heritage.`,
         image: "https://beaverworksmint.ca/wp-content/uploads/2025/07/456790901_10169043772125273_1887859542596921941_n.jpg",
