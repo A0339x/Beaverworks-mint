@@ -60,12 +60,13 @@ export interface PageContent {
   subtitle?: string;
   headerImage: string;
   sections: {
-    type?: 'standard' | 'banner'; // New field to distinguish layout styles
+    type?: 'standard' | 'banner' | 'embed'; // New field to distinguish layout styles
     title?: string;
     subtitle?: string; // Added subtitle support for sections
     content?: string;
     quote?: string; // Added for banner quotes
     image?: string;
     imageAlign?: 'left' | 'right';
+    embedUrl?: string; // For embedded content like Bandcamp players
   }[];
 }
