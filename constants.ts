@@ -42,6 +42,7 @@ export const NAV_ITEMS: NavItem[] = [
   },
   { label: 'Flight Badges', id: 'badges', type: 'category' },
   { label: 'Watches', id: 'watches', type: 'category' },
+  { label: 'Bullion', id: 'bullion', type: 'page' },
   { label: 'Music', id: 'music', type: 'page' },
   { label: 'Press', id: 'press', type: 'page' },
   { label: 'Our Story', id: 'story', type: 'page' },
@@ -635,6 +636,43 @@ This is Beaverworks Mint. Built from nothing. Forged with purpose. Minted for Ca
             type: "article"
           }
         ]
+      }
+    ]
+  },
+  bullion: {
+    title: "Our Bullion",
+    subtitle: "Refined by the Royal Canadian Mint",
+    headerImage: "https://beaverworksmint.ca/wp-content/uploads/2025/07/Silver4-496x560.png",
+    sections: [
+      {
+        type: 'banner',
+        quote: "We exclusively use metals refined by the Royal Canadian Mint"
+      },
+      {
+        type: 'standard',
+        title: "Our Gold",
+        subtitle: "A Commitment to Purity, Integrity, and National Pride",
+        content: `At Beaverworks Mint, we exclusively source our gold from the Royal Canadian Mint — a globally respected institution renowned for producing some of the purest precious metals in the world.
+
+When you hold one of our coins, you're holding gold that was responsibly refined right here in Canada, under some of the strictest ethical and environmental standards anywhere. This gold has passed through the hands of a Crown Corporation with a legacy of excellence and a reputation built on honour — and it continues that legacy in the form of every coin we strike.
+
+By using only gold from the Royal Canadian Mint, we ensure that our art is rooted in integrity, traceability, and Canadian pride.`,
+        image: "https://beaverworksmint.ca/wp-content/uploads/2025/07/Silver4-496x560.png",
+        imageAlign: 'right'
+      },
+      {
+        type: 'standard',
+        title: "Our Silver",
+        subtitle: "Pure, Ethical, and Proudly Canadian",
+        content: `At Beaverworks Mint, every piece we produce is a reflection of our core values — integrity, craftsmanship, and national pride. That's why we are proud to say that all of our silver is sourced exclusively from the Royal Canadian Mint.
+
+In a world where origins are often uncertain, we've made a deliberate choice to use silver that is not only among the purest available, but also ethically refined and traceable to Canadian soil. The Royal Canadian Mint stands as a global benchmark for excellence, and their commitment to environmental responsibility and transparency mirrors our own.
+
+When you purchase a coin from us, you're investing in more than silver — you're investing in a piece of Canada. From the miner's hands to the artist's touch, our silver tells a story of purity, accountability, and national identity.
+
+Because true value isn't just in the metal — it's in how it's sourced, why it's made, and who it's made for.`,
+        image: "https://beaverworksmint.ca/wp-content/uploads/2025/07/Silver4-496x560.png",
+        imageAlign: 'left'
       }
     ]
   },
