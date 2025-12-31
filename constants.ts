@@ -165,16 +165,22 @@ Rather than rely on unreliable third-party contractors, with all the delays and 
   },
   'arrow-collection': {
     title: "The Avro Arrow",
-    subtitle: "A Canadian Legend",
-    heroHeadline: "THE ARROW LIVES ON",
-    heroSubheadline: "FORGED IN GOLD AND SILVER",
-    heroImage: "https://beaverworksmint.ca/wp-content/uploads/2025/08/GoldenArrow22.jpg",
-    contentTitle: "The Coin They Tried to Kill",
-    content: `When Canadian Artist Joe Green decided to make the Fine Silver Arrow coin, he went all out and in the process, as he was told by the minting sub-contractor he was using, that up until this coin, no coin in history was ever minted up to the specifications this one had.
+    subtitle: "Canada Set The Standard",
+    heroHeadline: "IF WE ABANDON OUR PAST, WE CONDEMN OUR FUTURE.",
+    heroSubheadline: "OCTOBER 4, 1957 — AVRO ARROW ROLLOUT",
+    heroImage: "https://beaverworksmint.ca/wp-content/uploads/2025/07/GA1.jpg",
+    contentTitle: "Build Canadian",
+    content: `Canada stands at a crossroads. For too long, our national security and technological sovereignty have depended on the goodwill of foreign powers. The cancellation of the Avro Arrow in 1959 was a wound that never fully healed—a symbol of what happens when a nation abandons its own potential.
 
-Over the course of making and remaking our dies — sometimes due to ultra-fine flaws invisible to the untrained eye — we continued enhancing the sculpt of the Arrow. Each revision pushed the detail further, until even the canopy windows, individual actuators, and surface paneling on the aircraft’s upper fuselage were crisply defined.
+The Arrow was more than an aircraft. It was proof that Canada could compete with—and even surpass—the superpowers. It represented the pinnacle of Canadian engineering excellence: an advanced interceptor that could fly higher, faster, and farther than anything else in the world at the time.
 
-The Golden Arrow was never meant to fly—at least not by those who tried to silence it. But just like the engineers, pilots, and dreamers who built the Arrow, we refused to quit.`,
+When Canadian Artist Joe Green decided to make the Fine Silver Arrow coin, he went all out and in the process, as he was told by the minting sub-contractor he was using, that up until this coin, no coin in history was ever minted up to the specifications this one had.
+
+Over the course of making and remaking our dies — sometimes due to ultra-fine flaws invisible to the untrained eye — we continued enhancing the sculpt of the Arrow. Each revision pushed the detail further, until even the canopy windows, individual actuators, and surface paneling on the aircraft's upper fuselage were crisply defined.
+
+The Golden Arrow was never meant to fly—at least not by those who tried to silence it. But just like the engineers, pilots, and dreamers who built the Arrow, we refused to quit.
+
+They tried to destroy our dream. They utterly, utterly failed.`,
     secondaryImage: "https://beaverworksmint.ca/wp-content/uploads/2025/07/arrowpilots2.jpg"
   },
   'watches': {
@@ -678,6 +684,53 @@ Because true value isn't just in the metal — it's in how it's sourced, why it'
       }
     ]
   },
+  'arrow-main': {
+    title: "The Avro Arrow Collection",
+    subtitle: "Canada Set The Standard",
+    headerImage: "https://beaverworksmint.ca/wp-content/uploads/2025/07/GA1.jpg",
+    sections: [
+      {
+        type: 'banner',
+        quote: "IF WE ABANDON OUR PAST, WE CONDEMN OUR FUTURE."
+      },
+      {
+        type: 'standard',
+        title: "Build Canadian",
+        subtitle: "October 4, 1957 — Avro Arrow Rollout",
+        content: `Canada stands at a crossroads. For too long, our national security and technological sovereignty have depended on the goodwill of foreign powers. The cancellation of the Avro Arrow in 1959 was a wound that never fully healed—a symbol of what happens when a nation abandons its own potential.
+
+The Arrow was more than an aircraft. It was proof that Canada could compete with—and even surpass—the superpowers. It represented the pinnacle of Canadian engineering excellence: an advanced interceptor that could fly higher, faster, and farther than anything else in the world at the time.
+
+They tried to destroy our dream. They utterly, utterly failed.`,
+        image: "https://beaverworksmint.ca/wp-content/uploads/2025/07/B4.png",
+        imageAlign: 'right'
+      },
+      {
+        type: 'standard',
+        title: "The Avrocar",
+        subtitle: "VZ-9 Experimental Aircraft",
+        content: `The Avrocar (VZ-9) stands as a powerful symbol of Canada's untapped potential—a 1950s flying saucer-shaped experimental aircraft that proved Canadian aerospace leadership was not just possible, but inevitable.
+
+Built by Avro Canada, the Avrocar was designed as a VTOL (vertical take-off and landing) aircraft capable of supersonic speeds. Though testing revealed limitations, the project demonstrated the extraordinary vision and engineering capabilities that existed in Canada during this golden age of aerospace innovation.
+
+The Avrocar reminds us that Canadian ingenuity knew no bounds—and that with the right support, there are no limits to what we can achieve.`,
+        image: "https://beaverworksmint.ca/wp-content/uploads/2025/07/bannerB1.png",
+        imageAlign: 'left'
+      },
+      {
+        type: 'standard',
+        title: "The Arrow Documentary",
+        subtitle: "A Story of Innovation and Lost Ambition",
+        content: `In 1997, Dan Aykroyd starred in a CBC miniseries depicting the rise and fall of the Avro Arrow—a powerful cultural documentation of Canadian innovation and the tragic consequences of political interference.
+
+The documentary captured the hearts of Canadians and reminded a new generation of what was lost. It showed how a small team of brilliant engineers created something the world had never seen, only to watch it be destroyed by forces beyond their control.
+
+We refuse to let that story end in tragedy. Through our coins, we preserve the Arrow's legacy and ensure that future generations remember what Canada is truly capable of achieving.`,
+        image: "https://beaverworksmint.ca/wp-content/uploads/2025/07/arrowpilots2.jpg",
+        imageAlign: 'right'
+      }
+    ]
+  },
   music: {
     title: "Music in Precious Metal",
     subtitle: "Per Ardua Ad Astra",
@@ -760,67 +813,99 @@ Every project we undertake is guided by our commitment to excellence, authentici
 // Comprehensive Product Database from PRODUCTS.txt
 export const ALL_PRODUCTS: ProductHighlight[] = [
   // --- Avro Arrow Collection ---
-  { 
-    id: 'golden-arrow', 
-    title: 'The Golden Arrow', 
-    subtitle: 'The Coin They Tried to Kill', 
-    price: '$12,500.00', 
+  {
+    id: 'golden-arrow',
+    title: 'The Golden Arrow',
+    subtitle: 'The Coin They Tried to Kill',
+    price: '$12,500.00',
     category: 'arrow-collection gold',
-    image: 'https://beaverworksmint.ca/wp-content/uploads/2025/08/GoldenArrow22.jpg',
+    image: 'https://beaverworksmint.ca/wp-content/uploads/2025/07/GA1.jpg',
     description: "A Golden Tribute They Wanted Forgotten—But We Refused to Let Die. 2.01 Troy Oz .9999 Fine Gold.",
-    longDescription: "The Golden Arrow was never meant to fly—at least not by those who tried to silence it. Struck from 2.01 troy ounces of solid, .9999 fine gold. Each coin is select Rhodium plated and individually serialized. This is not just a coin; it is a monument in miniature.",
+    longDescription: `The Golden Arrow was never meant to fly—at least not by those who tried to silence it. Struck from 2.01 troy ounces of solid, .9999 fine gold, this coin represents the pinnacle of achievement.
+
+The designer, trained at Emily Carr Institute, incorporated symbolic elements: 100 tiny squares around the perimeter reflecting the RCAF's centennial, and 201 tiny round dots representing the first Arrow aircraft designation (RL-201).
+
+Every possible aspect of what this represents reflects the entirety of what the Arrow represented to Canadians: the pinnacle of achievement. The first 7 coins come with a display box containing Arrow Program metal extracted from AVRO.
+
+They tried to destroy our dream. They utterly, utterly failed.`,
     specs: [
-      {label: 'Composition', value: '99.99% Gold'}, 
-      {label: 'Weight', value: '2.01 Troy Oz'}, 
-      {label: 'Mintage', value: '206'}, 
-      {label: 'Plating', value: 'Select Rhodium'}
+      {label: 'Composition', value: '99.99% Gold'},
+      {label: 'Weight', value: '2.01 Troy Oz'},
+      {label: 'Mintage', value: '206'},
+      {label: 'Plating', value: 'Select Rhodium'},
+      {label: 'Features', value: 'Full Colour Printing, Serialized Edge'}
     ]
   },
-  { 
-    id: 'silver-arrow', 
-    title: 'The Silver Arrow', 
-    subtitle: 'The Coin That Started It All', 
-    price: '$155.00', 
+  {
+    id: 'silver-arrow',
+    title: 'The Silver Arrow',
+    subtitle: 'The Coin That Started It All',
+    price: '$145.00',
     category: 'arrow-collection silver',
-    image: 'https://beaverworksmint.ca/wp-content/uploads/2025/08/SilverArrow.jpg',
-    description: "1 Troy Oz .9999 Fine Silver. Dedicated to the AVRO Arrow and the Royal Canadian Air Force.",
-    longDescription: "When Canadian Artist Joe Green decided to make the Fine Silver Arrow coin, he went all out. Setting the standard in global minting excellence with this first issue. Features full colour printing and serialised edge markings.",
+    image: 'https://beaverworksmint.ca/wp-content/uploads/2025/07/SA2.jpg',
+    description: "The coin that started it all. 1 Troy Oz .9999 Fine Silver with Select Gold Plate.",
+    longDescription: `When Canadian Artist Joe Green decided to make the Fine Silver Arrow coin, he went all out and in the process, as he was told by the minting sub-contractor he was using, that up until this coin, no coin in history was ever minted up to the specifications this one had.
+
+Features the crown of Her Majesty Queen Elizabeth II, 100 tiny squares around perimeter (RCAF 100th Anniversary), and 201 tiny round dots around interior perimeter (reflects RL-201, the first Arrow to fly).
+
+It's not just a coin, it's a performance piece. This coin set the standard in global minting excellence and catalyzed the decision to build our own mint.
+
+Series A Complete: 425 total. Series J: Mintage 426-1535. Maximum Total Public Mintage: 2,010.`,
     specs: [
-      {label: 'Composition', value: '99.99% Silver'}, 
-      {label: 'Weight', value: '1 Troy Oz'}, 
-      {label: 'Diameter', value: '38 mm'},
-      {label: 'Mintage', value: '2010'}
+      {label: 'Composition', value: '99.99% Silver'},
+      {label: 'Weight', value: '1 Troy Oz'},
+      {label: 'Plating', value: 'Select Gold Plate'},
+      {label: 'Mintage', value: '2,010'},
+      {label: 'Features', value: 'Full Colour Printing, Serialized Edge'}
     ]
   },
-  { 
-    id: 'arrow-program', 
-    title: 'Arrow Program Metal Coin', 
-    subtitle: 'Reclaimed Artifact', 
-    price: '$799.00', 
+  {
+    id: 'arrow-program',
+    title: 'Arrow Program Metal Coin',
+    subtitle: 'A Tangible Connection to History',
+    price: '$795.00',
     category: 'arrow-collection',
-    image: 'https://beaverworksmint.ca/wp-content/uploads/2025/08/ArrowProgram.jpg',
-    description: "Struck from the Fabric of a Canadian Legend. Authentic metal salvaged from Avro facilities.",
-    longDescription: "This is not gold. This is not silver. This is something far rarer—a coin struck from authentic metal salvaged from the Avro facilities tied to the legendary Arrow program. With only 50 coins minted, this is among the most exclusive and meaningful commemorative coins ever produced.",
+    image: 'https://beaverworksmint.ca/wp-content/uploads/2025/07/ArrowMetal.jpg',
+    description: "Minted from metal believed to originate from the legendary AVRO ARROW program.",
+    longDescription: `This is more than a coin. It is an artifact. A relic. A tangible connection to a story of Canadian ambition, heartbreak, and pride.
+
+The metal was recovered from a hand-built fishing boat discovered near Algonquin Park, Ontario. The vessel was constructed by someone connected to the AVRO program and deliberately sunk for security reasons. Stamped numbers "1610" on the boat correspond to the AVRO ARROW Mk.1's speed capability: 1613 km/h (1000 mph) at 50,000 feet.
+
+A number of these coins were given to Royal Canadian Air Cadets affiliated with the Princess Patricia's Canadian Light Infantry, presented to Cadets who exhibit the highest form of extreme excellence.
+
+We are never going to allow them to wipe her from history.`,
     specs: [
-      {label: 'Material', value: 'Reclaimed Avro Metal'}, 
-      {label: 'Mintage', value: '50'}, 
-      {label: 'Status', value: 'Top Secret'}
+      {label: 'Material', value: 'Avro Arrow Program Metal'},
+      {label: 'Mintage', value: '50'},
+      {label: 'Origin', value: 'Recovered Artifact'},
+      {label: 'Status', value: 'Extremely Limited'}
     ]
   },
-  { 
-    id: 'test-pilot', 
-    title: 'Test Pilot Edition', 
-    subtitle: 'Gold Plated Silver Arrow', 
-    price: '$206.00', 
+  {
+    id: 'test-pilot',
+    title: 'Test Pilot Edition',
+    subtitle: 'A Tribute to Courage and Flight',
+    price: '$206.00',
     category: 'arrow-collection silver',
-    image: 'https://beaverworksmint.ca/wp-content/uploads/2025/08/TestPilotEdition.jpg',
+    image: 'https://beaverworksmint.ca/wp-content/uploads/2025/07/TestPilot-2.jpg',
     description: "Dedicated to the Test Pilots: Janusz Zurokowski, Wladyslaw Potocki, Peter Cope, Jack Woodman.",
-    longDescription: "The Test Pilot Edition Coin: A Tribute to Courage and Flight. By plating fine silver with radiant gold, we’ve created a version of our Golden Arrow that’s accessible to every Canadian who shares in this pride. #RL-200 - RL-406.",
+    longDescription: `The Test Pilot Edition Coin: A Tribute to Courage and Flight. Each revision of our dies pushed the detail further, until even the canopy windows, individual actuators, and surface paneling on the aircraft's upper fuselage were crisply defined.
+
+By plating fine silver with radiant gold, we've created a version that showcases surface details that white ink printing previously obscured. Each coin receives individual serialization, and matching serial numbers appear on custom-printed display slabs.
+
+Dedicated to the brave test pilots who flew the Arrow:
+• Janusz Zurokowski
+• Wladyslaw "Spud" Potocki
+• Peter Cope
+• Jack Woodman
+
+Serial numbers: #RL-200 to RL-406. In-house production: plating, serialization, printing, assembly, fulfillment.`,
     specs: [
-      {label: 'Composition', value: '99.99% Silver'}, 
+      {label: 'Composition', value: '99.99% Silver'},
       {label: 'Finish', value: 'Gold Plated'},
-      {label: 'Weight', value: '1 Troy Oz'}, 
-      {label: 'Mintage', value: '206'}
+      {label: 'Weight', value: '1 Troy Oz'},
+      {label: 'Mintage', value: '206'},
+      {label: 'Serials', value: '#RL-200 to RL-406'}
     ]
   },
   { 
