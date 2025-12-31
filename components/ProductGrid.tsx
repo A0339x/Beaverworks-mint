@@ -31,7 +31,7 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ onNavigate }) => {
           {PRODUCTS.map((product) => (
             <div
               key={product.id}
-              className="relative group bg-white p-12 pb-20 overflow-hidden cursor-pointer"
+              className="relative group bg-white p-12 pb-16 overflow-hidden cursor-pointer"
               onClick={() => handleClick(product.id)}
             >
               <div className="aspect-square relative mb-8">
@@ -47,13 +47,13 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ onNavigate }) => {
                 <h3 className="font-serif text-2xl text-slate-900 mb-1">{product.title}</h3>
                 <p className="text-xs uppercase tracking-widest text-slate-500 mb-4">{product.subtitle}</p>
                 <div className="w-8 h-[1px] bg-canadian-red mx-auto mb-4 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-                <p className="font-medium text-slate-900 mb-8">{product.price}</p>
+                <p className="font-medium text-slate-900">{product.price}</p>
               </div>
 
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="absolute bottom-6 left-1/2 -translate-x-1/2 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 bg-slate-900 text-white px-6 py-2 text-xs uppercase tracking-widest"
+                className="mt-4 w-full opacity-0 group-hover:opacity-100 transition-all duration-500 bg-slate-900 text-white px-6 py-2 text-xs uppercase tracking-widest"
               >
                 View Details
               </motion.button>
