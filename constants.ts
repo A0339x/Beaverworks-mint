@@ -43,6 +43,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Flight Badges', id: 'badges', type: 'category' },
   { label: 'Watches', id: 'watches', type: 'category' },
   { label: 'Music', id: 'music', type: 'page' },
+  { label: 'Press', id: 'press', type: 'page' },
   { label: 'Our Story', id: 'story', type: 'page' },
   { label: 'Contact', id: 'contact', type: 'page' },
 ];
@@ -595,6 +596,45 @@ More than coins, these are testaments to commitment, artistry, and the power of 
 This is Beaverworks Mint. Built from nothing. Forged with purpose. Minted for Canada.`,
         image: "https://beaverworksmint.ca/wp-content/uploads/2025/07/Col3.jpg",
         imageAlign: 'right'
+      }
+    ]
+  },
+  press: {
+    title: "Press & Media",
+    subtitle: "In The News",
+    headerImage: "https://beaverworksmint.ca/wp-content/uploads/2025/07/top-1800-1.jpg",
+    sections: [
+      {
+        type: 'pressGallery',
+        items: [
+          {
+            title: "Valuable Coins Returned",
+            source: "CBC News",
+            date: "June 13, 2016",
+            description: "Edmonton-based coin designer reunited with valuable coin collection left behind in a St. John's taxi.",
+            image: "https://beaverworksmint.ca/wp-content/uploads/2025/07/CBC1-scaled.jpg",
+            link: "https://www.cbc.ca/player/play/video/1.3633160",
+            type: "video"
+          },
+          {
+            title: "Space Flag Interview",
+            source: "YouTube",
+            date: "2016",
+            description: "Proud to be Canadian. An interview about the Space Flag project and Canadian heritage.",
+            image: "https://beaverworksmint.ca/wp-content/uploads/2025/07/DaveNagy.jpg",
+            link: "https://www.youtube.com/watch?v=efqkWNzy57A",
+            type: "video"
+          },
+          {
+            title: "Beaverworks Mint Feature",
+            source: "CBC Newfoundland",
+            date: "2016",
+            description: "There are no words to convey how much I love the people of Newfoundland and Labrador.",
+            image: "https://beaverworksmint.ca/wp-content/uploads/2025/07/CBC2-scaled.jpg",
+            link: "https://www.cbc.ca/player/play/video/1.3633160",
+            type: "article"
+          }
+        ]
       }
     ]
   },

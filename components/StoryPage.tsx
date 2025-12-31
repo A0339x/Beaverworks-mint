@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Play } from 'lucide-react';
+import { Play, ExternalLink, PlayCircle, FileText } from 'lucide-react';
 import { PAGE_CONTENT } from '../constants';
 import { CallToAction } from './CallToAction';
 
@@ -164,6 +164,73 @@ export const StoryPage: React.FC<StoryPageProps> = ({ pageId = 'story', onNaviga
                       </a>
                     </div>
                   </div>
+                </div>
+              </div>
+            );
+          }
+
+          // Press Gallery Type: Grid of press items with links
+          if (section.type === 'pressGallery') {
+            return (
+              <div key={idx} className="container mx-auto px-6 mb-32">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {section.items?.map((item, itemIdx) => (
+                    <motion.a
+                      key={itemIdx}
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: itemIdx * 0.1 }}
+                      className="group bg-white shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                    >
+                      <div className="relative aspect-[4/3] overflow-hidden">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/20 transition-colors duration-300" />
+                        <div className="absolute top-4 left-4">
+                          <span className="bg-canadian-red text-white text-xs font-bold uppercase tracking-wider px-3 py-1">
+                            {item.source}
+                          </span>
+                        </div>
+                        <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          {item.type === 'video' ? (
+                            <PlayCircle className="w-12 h-12 text-white drop-shadow-lg" />
+                          ) : (
+                            <ExternalLink className="w-8 h-8 text-white drop-shadow-lg" />
+                          )}
+                        </div>
+                      </div>
+                      <div className="p-6">
+                        <p className="text-xs text-slate-400 uppercase tracking-wider mb-2">{item.date}</p>
+                        <h3 className="font-serif text-xl text-slate-900 mb-3 group-hover:text-canadian-red transition-colors">
+                          {item.title}
+                        </h3>
+                        <p className="text-slate-600 text-sm leading-relaxed">
+                          {item.description}
+                        </p>
+                        <div className="mt-4 flex items-center gap-2 text-canadian-red text-sm font-medium">
+                          {item.type === 'video' ? (
+                            <>
+                              <PlayCircle className="w-4 h-4" />
+                              Watch Video
+                            </>
+                          ) : (
+                            <>
+                              <FileText className="w-4 h-4" />
+                              Read Article
+                            </>
+                          )}
+                          <ExternalLink className="w-3 h-3" />
+                        </div>
+                      </div>
+                    </motion.a>
+                  ))}
                 </div>
               </div>
             );

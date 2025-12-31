@@ -60,7 +60,7 @@ export interface PageContent {
   subtitle?: string;
   headerImage: string;
   sections: {
-    type?: 'standard' | 'banner' | 'embed' | 'musicPlayer'; // New field to distinguish layout styles
+    type?: 'standard' | 'banner' | 'embed' | 'musicPlayer' | 'pressGallery'; // New field to distinguish layout styles
     title?: string;
     subtitle?: string; // Added subtitle support for sections
     content?: string;
@@ -71,5 +71,6 @@ export interface PageContent {
     albumArt?: string; // For music player
     bandcampAlbumId?: string; // For music player
     tracks?: { title: string; trackId: number }[]; // For music player
+    items?: { title: string; source: string; date: string; description: string; image: string; link: string; type: string }[]; // For press gallery
   }[];
 }
