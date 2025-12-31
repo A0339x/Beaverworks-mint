@@ -612,7 +612,7 @@ This is Beaverworks Mint. Built from nothing. Forged with purpose. Minted for Ca
             source: "Canadian Aviator",
             date: "March/April 2016",
             description: "First of 100 coins marking aviation milestones. Edmonton designer Joe Green immortalizes the Avro Arrow.",
-            image: "https://canadianaviator.com/wp-content/uploads/2016/01/coin24-520x347.jpg",
+            image: "https://beaverworksmint.ca/wp-content/uploads/2025/07/DaveNagy.jpg",
             link: "https://canadianaviator.com/coins-commemorate-arrow/",
             type: "article"
           },
