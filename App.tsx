@@ -59,11 +59,12 @@ function App() {
       case 'product':
         return <ProductDetail productId={view.id} onNavigate={handleNavigate} />;
       case 'page':
+        // Contact page has its own component
+        if (view.id === 'contact') return <ContactPage />;
         // Dynamically route to any page defined in PAGE_CONTENT
         if (PAGE_CONTENT[view.id]) {
              return <StoryPage pageId={view.id} onNavigate={handleNavigate} />;
         }
-        if (view.id === 'contact') return <ContactPage />;
         return <div>Page not found</div>;
       default:
         return <div>Not found</div>;
