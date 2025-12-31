@@ -597,6 +597,32 @@ This is Beaverworks Mint. Built from nothing. Forged with purpose. Minted for Ca
       }
     ]
   },
+  services: {
+    title: "Our Services",
+    subtitle: "Craftsmanship & Expertise",
+    headerImage: "https://beaverworksmint.ca/wp-content/uploads/2025/07/Striking.jpg",
+    sections: [
+      {
+        type: 'standard',
+        title: "What We Offer",
+        content: `Beaverworks Mint is Western Canada's only operating private mint, offering a complete range of services for collectors, organizations, and businesses seeking exceptional commemorative pieces.
+
+Our services include:
+
+**Leadership** — Learn about the visionaries and master craftsmen behind Beaverworks Mint.
+
+**Consulting** — Custom coin design and minting services for organizations, military units, corporations, and private collectors.
+
+**Sculpting** — Master-level digital sculpting and engraving by industry veterans, including former Royal Canadian Mint senior engravers.
+
+**Striking** — Precision minting using our custom-built hydraulic press system, capable of producing museum-quality proof coins.
+
+Every project we undertake is guided by our commitment to excellence, authenticity, and Canadian heritage.`,
+        image: "https://beaverworksmint.ca/wp-content/uploads/2025/07/456790901_10169043772125273_1887859542596921941_n.jpg",
+        imageAlign: 'right'
+      }
+    ]
+  },
   contact: {
     title: "Get in Touch",
     subtitle: "We are listening",
